@@ -1,11 +1,30 @@
+@font-face {
+  font-family: 'Poppins';
+  font-weight: normal;
+  font-style: normal;
+  src: url('Assets/Fonts/Poppins/Poppins-Medium.ttf') format("truetype")
+}
+
+@font-face {
+  font-family: 'Sofia Pro';
+  font-weight: normal;
+  font-style: normal;
+  src: url('Assets/Fonts/Sofia/Sofia Pro Medium Az.otf') format("truetype")
+}
+
+@font-face {
+  font-family: 'Poppins';
+  font-weight: 1;
+  font-style: normal;
+  src: url('Assets/Fonts/Poppins/Poppins-Light.ttf') format("truetype")
+}
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',

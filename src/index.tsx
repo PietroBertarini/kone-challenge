@@ -3,9 +3,14 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import './Assets/Fonts/Poppins/Poppins-Medium.ttf';
+import './Assets/Fonts/Poppins/Poppins-Light.ttf';
+import './Assets/Fonts/Sofia/Sofia Pro Medium Az.otf';
+import GlobalStyles from './global.styles';
 
 ReactDOM.render(
   <React.StrictMode>
+    <GlobalStyles />
     <App />
   </React.StrictMode>,
   document.getElementById('root'),
