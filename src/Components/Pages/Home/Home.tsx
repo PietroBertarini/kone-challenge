@@ -8,7 +8,7 @@ const Home = () => {
     <Navbar>
       <Logo>My Team</Logo>
       <ImportButton onClick={() => setIsOpen(true)}>Import Team</ImportButton>
-      <Modal open={isOpen} />
+      <Modal open={isOpen} onClose={() => setIsOpen(false)} />
     </Navbar>
   );
 };
