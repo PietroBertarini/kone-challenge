@@ -18,13 +18,21 @@
   font-style: normal;
   src: url('Assets/Fonts/Poppins/Poppins-Light.ttf') format("truetype")
 }
-
+html,
+body {
+  height: 100%;
+}
 body {
   margin: 0;
   background-color: #FDFDFD;
   padding: 34px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+
+div#portal {
+  height: 100%;
 }
 
 
