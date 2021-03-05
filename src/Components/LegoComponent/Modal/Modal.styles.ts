@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import {
-  activeBlue, fontBlack, overlayGray, pureWhite,
+  activeBlue, closeGray, fontBlack, overlayGray, pureWhite,
 } from '../../../global.styles';
 
 export const Overlay = styled.div`
@@ -54,7 +54,7 @@ export const CloseButton = styled.button`
   align-self: end;
   margin: 24px 32px 27px 0;
   /* UI Properties */
-  color: ${fontBlack};
+  color: ${closeGray};
   background-color: transparent;
   :hover {
     color:  ${activeBlue};

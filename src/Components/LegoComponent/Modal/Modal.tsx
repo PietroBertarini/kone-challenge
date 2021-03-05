@@ -5,12 +5,12 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   CloseButton, Container, HeaderBar, Header, Overlay,
 } from './Modal.styles';
+import StepProgress from '../StepProgress/StepProgress';
 
 interface OwnProps {
     open: boolean,
     children?: JSX.Element,
     onClose: () => void,
-
 }
 
 const Modal = ({ open, children, onClose }: OwnProps) => {
@@ -24,6 +24,7 @@ const Modal = ({ open, children, onClose }: OwnProps) => {
             <FontAwesomeIcon icon={faTimes} />
           </CloseButton>
         </HeaderBar>
+        <StepProgress />
         {children}
       </Container>
     </Overlay>,
