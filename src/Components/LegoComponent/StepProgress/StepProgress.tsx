@@ -1,12 +1,10 @@
 import React from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faCheck,
   faFootballBall, faStar, faUpload,
 } from '@fortawesome/free-solid-svg-icons';
-import {
-  FirstStep, FlexContainer, StepFlexContainer, LastStep, MiddleStep, StyledText,
-} from './StepProgress.styles';
+import { FlexContainer } from './StepProgress.styles';
+import { FirstStep, LastStep, MiddleStep } from '../Steps/Steps';
 
 interface OwnProps {
     state?: number, // will be a enum, maybe using redux
@@ -16,30 +14,10 @@ const StepProgress = ({ state }: OwnProps) => {
   const portalDiv = document.getElementById('portal');
   return (
     <FlexContainer>
-      <FirstStep>
-        <StepFlexContainer>
-          <FontAwesomeIcon icon={faUpload} />
-          <StyledText>Upload Data</StyledText>
-        </StepFlexContainer>
-      </FirstStep>
-      <MiddleStep>
-        <StepFlexContainer>
-          <FontAwesomeIcon icon={faFootballBall} />
-          <StyledText>Player Status</StyledText>
-        </StepFlexContainer>
-      </MiddleStep>
-      <MiddleStep>
-        <StepFlexContainer>
-          <FontAwesomeIcon icon={faStar} />
-          <StyledText>Favorite</StyledText>
-        </StepFlexContainer>
-      </MiddleStep>
-      <LastStep>
-        <StepFlexContainer>
-          <FontAwesomeIcon icon={faCheck} />
-          <StyledText>Complete</StyledText>
-        </StepFlexContainer>
-      </LastStep>
+      <FirstStep isActive iconImage={faUpload} text="Upload Data" />
+      <MiddleStep iconImage={faFootballBall} text="Player Status" />
+      <MiddleStep iconImage={faStar} text="Favorite" />
+      <LastStep iconImage={faCheck} text="Complete" />
     </FlexContainer>
   );
 };
