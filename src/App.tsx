@@ -1,9 +1,9 @@
 import React from 'react';
-import { Title } from './App.styles';
+import Home from './Components/Pages/Home/Home';
 
 const App = () => (
-  <div className="App">
-    <Title>Pietro</Title>
+  <div>
+    <Home />
   </div>
 );
 

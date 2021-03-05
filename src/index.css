@@ -21,6 +21,8 @@
 
 body {
   margin: 0;
+  background-color: #FDFDFD;
+  padding: 34px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
