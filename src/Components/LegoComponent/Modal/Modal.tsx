@@ -3,17 +3,18 @@ import ReactDom from 'react-dom';
 import { faTimes } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
-  CloseButton, Container, HeaderBar, Header, Overlay, ContinueButton, TextButton, FlexButtonContainer,
+  CloseButton, Container, Header, HeaderBar, Overlay,
 } from './Modal.styles';
 import StepProgress from '../StepProgress/StepProgress';
+import UploadData from '../ModalBodys/UploadData/UploadData';
+import ButtonBar from '../ButtonBar/ButtonBar';
 
 interface OwnProps {
     open: boolean,
-    children?: JSX.Element,
     onClose: () => void,
 }
 
-const Modal = ({ open, children, onClose }: OwnProps) => {
+const Modal = ({ open, onClose }: OwnProps) => {
   const portalDiv = document.getElementById('portal');
   return (open && portalDiv) ? ReactDom.createPortal(
     <Overlay>
@@ -25,15 +26,8 @@ const Modal = ({ open, children, onClose }: OwnProps) => {
           </CloseButton>
         </HeaderBar>
         <StepProgress />
-        {children}
-        <FlexButtonContainer>
-          {/* Refactor button and add states */}
-          <ContinueButton onClick={onClose}>
-            <TextButton>
-              Continue
-            </TextButton>
-          </ContinueButton>
-        </FlexButtonContainer>
+        <UploadData />
+        <ButtonBar />
       </Container>
     </Overlay>,
     portalDiv,
