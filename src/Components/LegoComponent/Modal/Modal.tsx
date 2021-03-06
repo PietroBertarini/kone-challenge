@@ -3,7 +3,7 @@ import ReactDom from 'react-dom';
 import { faTimes } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
-  CloseButton, Container, HeaderBar, Header, Overlay,
+  CloseButton, Container, HeaderBar, Header, Overlay, ContinueButton, TextButton, FlexButtonContainer,
 } from './Modal.styles';
 import StepProgress from '../StepProgress/StepProgress';
 
@@ -26,6 +26,14 @@ const Modal = ({ open, children, onClose }: OwnProps) => {
         </HeaderBar>
         <StepProgress />
         {children}
+        <FlexButtonContainer>
+          {/* Refactor button and add states */}
+          <ContinueButton onClick={onClose}>
+            <TextButton>
+              Continue
+            </TextButton>
+          </ContinueButton>
+        </FlexButtonContainer>
       </Container>
     </Overlay>,
     portalDiv,

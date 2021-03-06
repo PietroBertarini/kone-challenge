@@ -11,8 +11,10 @@ export const pureWhite = '#FFFFFF';
 export const overlayGray = '#0000003D';
 // export const pureBlack = '#000000';
 export const closeGray = '#333333';
+export const disableGray = '#1F1F1F';
 export const borderGray = '#E8E8E8';
 export const lightGray = '#F8F8F8';
+export const textDisableButton = '#FDFDFD';
 
 // export const errorRed = '#FF0000';
 // export const barGray = '#D1D1D1';
