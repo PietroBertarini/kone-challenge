@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import {
-  activeBlue, borderGray, fontBlack, primaryBlue, pureBlack, pureWhite,
+  activeBlue, borderGray, errorRed, primaryBlue, pureBlack, pureWhite,
 } from '../../../../global.styles';
 
 export const FlexColumnContainer = styled.div`
@@ -25,6 +25,16 @@ export const FlexRowContainer = styled.div`
 
   justify-content: space-between;
   align-items: center;
+`;
+
+export const FlexRowHeaderContainer = styled.div`
+  /* Layout Properties */
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+
+  justify-content: start;
+  align-items: start;
 `;
 
 export const BodyHeader = styled.h2`
@@ -94,11 +104,16 @@ export const TextRectangle = styled.div`
   opacity: 1;
   margin-bottom: 33px;
 `;
-
-export const StyledIcon = styled.text`
+interface IconProps {
+    isFailed?: boolean;
+}
+export const StyledIcon = styled.text<IconProps>`
+  --isSuccess: ${primaryBlue};
+  --isFailed: ${errorRed};
   letter-spacing: 0;
-  color: ${primaryBlue};
-  font-size: 12px;
+  color: ${(props) => (props.isFailed ? 'var(--isFailed)' : 'var(--isSuccess)')};
+  padding-right:  ${(props) => (props.isFailed ? '8px' : '0')};
+  font-size: 14px;
   opacity: 1;
 `;
 

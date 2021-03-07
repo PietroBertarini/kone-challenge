@@ -3,14 +3,15 @@ import {
   INextModalProgress,
   IBackModalProgress,
   IUpdateModalData,
-  EProgressStepOfModal, IUpdateModalError, IError,
+  IUpdateModalError,
+  IError,
 } from './Modal.types';
 
 export const nextModalProgress = () : INextModalProgress => ({
   type: EModalActionTypes.NEXT_PROGRESS_STEP,
 });
 
-export const backModalProgress = (newProgressState: EProgressStepOfModal) :
+export const backModalProgress = () :
     IBackModalProgress => ({
   type: EModalActionTypes.BACK_PROGRESS_STEP,
 });

@@ -13,7 +13,8 @@ export enum EModalError {
 }
 export interface IError {
   code: EModalError,
-  error: any, // update to a type in a future
+  errorMsg: string,
+  errorHeader: string,
 }
 
 /* Modal Redux Types */

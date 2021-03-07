@@ -6,7 +6,8 @@ export function checkCsvErrors(data: any) : IError | undefined {
   if (data.errors) {
     return {
       code: EModalError.UPLOAD_ERROR,
-      error: data.errors,
+      errorMsg: 'An error occurred while uploading the file. Please ensure your .xsv has a complete information',
+      errorHeader: 'Upload Failed',
     };
   }
   const arrayOfBooleans = data.map((cellOfCsv) => cellOfCsv.data.includes(''));
@@ -14,7 +15,8 @@ export function checkCsvErrors(data: any) : IError | undefined {
   if (haveAnyEmptyField) {
     return {
       code: EModalError.MISSING_FIELD,
-      error: 'One of records has a missing value of one columns. Please ensure your .xsv has a complete information',
+      errorMsg: 'One of records has a missing value of one columns. Please ensure your .xsv has a complete information',
+      errorHeader: 'Missing Value',
     };
   }
   return undefined;
@@ -28,9 +30,11 @@ export function handleOnFileLoad(data: any, file: any) {
     store.dispatch(updateModalData(data, file.name));
   }
 };
+
 export function handleOnError(err : any, file: any, inputElem : any, reason : any) {
   store.dispatch(updateModalError({
     code: EModalError.UPLOAD_ERROR,
-    error: err,
+    errorMsg: 'One of records has a missing value of one columns. Please ensure your .xsv has a complete information',
+    errorHeader: 'Upload Failed',
   }, file.name));
 };

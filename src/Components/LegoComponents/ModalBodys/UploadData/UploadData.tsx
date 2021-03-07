@@ -1,9 +1,9 @@
-import React, { Dispatch, useState } from 'react';
+import React, { useState } from 'react';
 import { CSVReader } from 'react-papaparse';
 import { useSelector } from 'react-redux';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
-  faCheck,
+  faCheck, faTimes, faTimesCircle,
 } from '@fortawesome/free-solid-svg-icons';
 import {
   BodyHeader,
@@ -11,13 +11,14 @@ import {
   FileButton,
   FlexColumnContainer,
   FlexRowContainer,
+  FlexRowHeaderContainer,
   InputStyle,
   StyledIcon,
   Subtitle,
   TextRectangle,
   TextStyle,
 } from './UploadData.styles';
-import { IModalState } from '../../../../Redux/LegoComponents/Modal/Modal.types';
+import { IError, IModalState } from '../../../../Redux/LegoComponents/Modal/Modal.types';
 import { rootState } from '../../../../Redux/root-reducer';
 import { handleOnError, handleOnFileLoad } from './UploadData.utils';
 
@@ -40,7 +41,7 @@ const UploadData = () => {
       <BodyHeader>Upload Data</BodyHeader>
       { !data && !error && UploadBody}
       { data && fileName && UploadSuccessBody(fileName, teamName, (e) => setTeamName(e.target.value))}
-      { error && fileName && (<Subtitle>FERROR</Subtitle>)}
+      { error && fileName && UploadFailedBody(fileName, error)}
 
     </FlexColumnContainer>
   );
@@ -87,6 +88,26 @@ const UploadSuccessBody = (fileName: string, inputValue: string, updateValue : (
     <TextRectangle>
       <InputStyle type="text" value={inputValue} onChange={updateValue} />
     </TextRectangle>
+  </>
+);
+
+const UploadFailedBody = (fileName: string, error: IError) => (
+  <>
+    <TextRectangle>
+      <FlexRowContainer>
+        <TextStyle>{fileName}</TextStyle>
+        <StyledIcon isFailed>
+          <FontAwesomeIcon icon={faTimes} />
+        </StyledIcon>
+      </FlexRowContainer>
+    </TextRectangle>
+    <FlexRowHeaderContainer>
+      <StyledIcon isFailed>
+        <FontAwesomeIcon icon={faTimesCircle} />
+      </StyledIcon>
+      <BodyHeader>{error.errorHeader}</BodyHeader>
+    </FlexRowHeaderContainer>
+    <Subtitle>{error.errorMsg}</Subtitle>
   </>
 );
 
