@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import {
-  disableGray, primaryBlue, pureWhite, textDisableButton,
+  borderGray,
+  disableGray, errorRed, fontBlack, primaryBlue, pureWhite, textDisableButton,
 } from '../../../global.styles';
 
 export const FlexButtonContainer = styled.div`
@@ -19,23 +20,35 @@ export const ContinueButton = styled.button`
   height: 36px;
   /* UI Properties */
   background: ${disableGray} 0 0 no-repeat padding-box;
+  color: ${textDisableButton}; ;
   border-radius: 8px;
   opacity: 0.2;
   margin-left: 8px;
   :hover {
     background-color:  ${primaryBlue};
     opacity: 1;
+    color:  ${pureWhite};
   }
 `;
 
-export const TextButton = styled.text`
+export const ReUploadButton = styled(ContinueButton)`
+  width: 135px;
   /* UI Properties */
-  text-align: left;
-  font-size: 14px;
-  letter-spacing: 0;
-  color: ${textDisableButton};
+  border: 1px solid ${borderGray};
+  background-color:  ${pureWhite};
+  color:  ${primaryBlue};
   opacity: 1;
   :hover {
-    color:  ${pureWhite};
+    background-color:  ${primaryBlue};
+  }
+`;
+
+export const BackButton = styled(ReUploadButton)`
+  width: 66px;
+  color:  ${fontBlack};
+  /* UI Properties */
+  opacity: 1;
+  :hover {
+    background-color:  ${errorRed};
   }
 `;
