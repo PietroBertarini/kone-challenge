@@ -48,15 +48,6 @@ export const BodyHeader = styled.h2`
   margin-bottom: 23px;
 `;
 
-export const ButtonText = styled.text`
-  /* UI Properties */
-  color: ${primaryBlue};
-  text-align: left;
-  font: normal normal medium 14px/21px Poppins;
-  letter-spacing: 0;
-
-`;
-
 export const FileButton = styled.text`
   /* Layout Properties */
   width: 102px;
@@ -66,6 +57,7 @@ export const FileButton = styled.text`
   align-items: center;
   /* UI Properties */
   background: ${pureWhite} 0 0 no-repeat padding-box;
+  color: ${primaryBlue};
   border: 1px solid ${borderGray};
   border-radius: 8px;
   opacity: 1;
@@ -73,9 +65,7 @@ export const FileButton = styled.text`
   :hover {
     border:  ${activeBlue};
     background: ${activeBlue} ;
-    ${ButtonText}{
-      color: ${pureWhite};
-    }
+    color: ${pureWhite};
   }
 `;
 

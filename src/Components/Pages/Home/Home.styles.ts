@@ -26,9 +26,6 @@ export const ImportButton = styled.button`
   background:  ${primaryBlue} 0% 0% no-repeat padding-box;
   border-radius: 8px;
   opacity: 1;
-  text-align: center;
-  font: normal normal medium 14px/21px Poppins;
-  letter-spacing: 0;
   color: ${backgroundWhite};
   :hover {
     background:  ${activeBlue} 0% 0% no-repeat padding-box;

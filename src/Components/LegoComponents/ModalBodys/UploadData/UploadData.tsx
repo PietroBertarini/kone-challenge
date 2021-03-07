@@ -7,7 +7,6 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 import {
   BodyHeader,
-  ButtonText,
   FileButton,
   FlexColumnContainer,
   FlexRowContainer,
@@ -62,10 +61,8 @@ const UploadBody = (
             cursor: 'pointer',
           }}
         >
-          <FileButton>
-            <ButtonText onClick={handleOpenDialog}>
-              Select File
-            </ButtonText>
+          <FileButton onClick={handleOpenDialog}>
+            Select File
           </FileButton>
         </aside>
       )}

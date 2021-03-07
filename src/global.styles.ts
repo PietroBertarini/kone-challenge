@@ -37,12 +37,15 @@ export default createGlobalStyle`
     outline: 0;
     box-sizing: border-box;
     font-family: Poppins,serif;
+    letter-spacing: 0;
     font-weight: bold;
   }
   button {
     cursor: pointer;
     padding: 0;
     border: none;
+    text-align: center;
+    font-size: 14px/21px;
   }
 
 `;
