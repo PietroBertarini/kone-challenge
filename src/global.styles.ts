@@ -37,6 +37,7 @@ export default createGlobalStyle`
     outline: 0;
     box-sizing: border-box;
     font-family: Poppins,serif;
+    font-weight: bold;
   }
   button {
     cursor: pointer;
