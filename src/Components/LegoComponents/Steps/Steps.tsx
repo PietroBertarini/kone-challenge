@@ -12,7 +12,7 @@ import {
   StyledText,
 } from './Steps.styles';
 import { rootState } from '../../../Redux/root-reducer';
-import { EProgressStepOfModal, IModalState } from '../../../Redux/LegoComponents/Modal/Modal.types';
+import { IModalState } from '../../../Redux/LegoComponents/Modal/Modal.types';
 
 interface StepProps {
     iconImage: IconProp,
@@ -21,9 +21,9 @@ interface StepProps {
 }
 export const FirstStep = ({ iconImage, text, stepOrder } : StepProps) => {
   const modalRedux : IModalState = useSelector((state : rootState) => state.modal);
-  const { progressStep } = modalRedux;
+  const { progressStep, error } = modalRedux;
   const isActive = progressStep >= stepOrder;
-  const haveAnyError = progressStep === EProgressStepOfModal.UPLOAD_FAILED;
+  const haveAnyError = error !== undefined;
   return (
     <FirstStepBackground isActiveStatus={isActive} isErrorStatus={haveAnyError}>
       <StepFlexContainer>

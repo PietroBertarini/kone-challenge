@@ -55,7 +55,12 @@ export const MiddleStepBackground = styled.div<StepProps>`
   
     border-top: 15px solid transparent;
     border-bottom: 15px solid transparent;
-    border-left: 15px solid ${(props) => (props.isActiveStatus ? 'var(--isActive)' : 'var(--isNotActive)')};
+    border-left: 15px solid ${(props) => {
+    if (props.isErrorStatus) return 'var(--isErrorStatus)';
+    if (props.isActiveStatus) return 'var(--isActive)';
+    return 'var(--isNotActive)';
+  }
+};
     z-index: 3;
 `;
 export const FirstStepBackground = styled(MiddleStepBackground)`
