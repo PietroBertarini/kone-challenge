@@ -14,7 +14,11 @@ const UploadData = () => {
   };
 
   function handleOnFileLoad(data: any, file: any) {
-    console.log(file.name);
+    console.log(`${file.name}`);
+    console.log(data.errors);// if exististes, return error
+    const arrayOfBooleans = data.map((cellOfCsv) => cellOfCsv.data.includes(''));
+    const haveAnyEmptyData = arrayOfBooleans.includes(true);// if true, return error
+    console.log(haveAnyEmptyData);
     console.log('---------------------------');
     console.log(data);
     console.log('---------------------------');
