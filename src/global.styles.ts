@@ -16,7 +16,7 @@ export const borderGray = '#E8E8E8';
 export const lightGray = '#F8F8F8';
 export const textDisableButton = '#FDFDFD';
 
-// export const errorRed = '#FF0000';
+export const errorRed = '#FF0000';
 // export const barGray = '#D1D1D1';
 // export const checkBoxGray = '#00000029';
 

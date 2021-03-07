@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import {
-  backgroundWhite, fontBlack, lightGray, primaryBlue, pureWhite,
+  backgroundWhite, errorRed, fontBlack, lightGray, primaryBlue, pureWhite,
 } from '../../../global.styles';
 
 export const StepFlexContainer = styled.div`
@@ -17,6 +17,7 @@ export const StepFlexContainer = styled.div`
 
 interface StepProps {
     isActiveStatus?: boolean;
+    isErrorStatus?: boolean;
 }
 export const MiddleStepBackground = styled.div<StepProps>`
   /* Layout Properties */
@@ -26,7 +27,13 @@ export const MiddleStepBackground = styled.div<StepProps>`
   flex-direction: row;
   --isActive: ${primaryBlue};
   --isNotActive: ${lightGray};
-  background: ${(props) => (props.isActiveStatus ? 'var(--isActive)' : 'var(--isNotActive)')} 0 0 no-repeat padding-box;
+  --isErrorStatus: ${errorRed};
+  background: ${(props) => {
+    if (props.isErrorStatus) return 'var(--isErrorStatus)';
+    if (props.isActiveStatus) return 'var(--isActive)';
+    return 'var(--isNotActive)';
+  }
+} 0 0 no-repeat padding-box;
   border-left: 0;
   opacity: 1;
   margin-right: 8px;

@@ -5,14 +5,14 @@ import { IconProp } from '@fortawesome/fontawesome-svg-core';
 import { useSelector } from 'react-redux';
 import {
   FirstStepBackground,
-  StepFlexContainer,
   LastStepBackground,
   MiddleStepBackground,
-  StyledText,
+  StepFlexContainer,
   StyledIcon,
+  StyledText,
 } from './Steps.styles';
 import { rootState } from '../../../Redux/root-reducer';
-import { IModalState } from '../../../Redux/LegoComponents/Modal/Modal.types';
+import { EProgressStepOfModal, IModalState } from '../../../Redux/LegoComponents/Modal/Modal.types';
 
 interface StepProps {
     iconImage: IconProp,
@@ -23,8 +23,9 @@ export const FirstStep = ({ iconImage, text, stepOrder } : StepProps) => {
   const modalRedux : IModalState = useSelector((state : rootState) => state.modal);
   const { progressStep } = modalRedux;
   const isActive = progressStep >= stepOrder;
+  const haveAnyError = progressStep === EProgressStepOfModal.UPLOAD_FAILED;
   return (
-    <FirstStepBackground isActiveStatus={isActive}>
+    <FirstStepBackground isActiveStatus={isActive} isErrorStatus={haveAnyError}>
       <StepFlexContainer>
         <StyledIcon isActiveStatus={isActive}>
           <FontAwesomeIcon icon={iconImage} />
