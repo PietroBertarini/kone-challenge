@@ -6,20 +6,13 @@ import {
 import { FlexContainer } from './StepProgress.styles';
 import { FirstStep, LastStep, MiddleStep } from '../Steps/Steps';
 
-interface OwnProps {
-    state?: number, // will be a enum, maybe using redux
-}
-
-const StepProgress = ({ state }: OwnProps) => {
-  const portalDiv = document.getElementById('portal');
-  return (
-    <FlexContainer>
-      <FirstStep isActive iconImage={faUpload} text="Upload Data" />
-      <MiddleStep iconImage={faFootballBall} text="Player Status" />
-      <MiddleStep iconImage={faStar} text="Favorite" />
-      <LastStep iconImage={faCheck} text="Complete" />
-    </FlexContainer>
-  );
-};
+const StepProgress = () => (
+  <FlexContainer>
+    <FirstStep iconImage={faUpload} text="Upload Data" stepOrder={1} />
+    <MiddleStep iconImage={faFootballBall} text="Player Status" stepOrder={2} />
+    <MiddleStep iconImage={faStar} text="Favorite" stepOrder={3} />
+    <LastStep iconImage={faCheck} text="Complete" stepOrder={4} />
+  </FlexContainer>
+);
 
 export default StepProgress;
