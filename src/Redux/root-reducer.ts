@@ -1,7 +1,7 @@
 import { combineReducers } from 'redux';
 
-import modalReducer from './Components/Modal/Modal.reducer';
-import { IModalState } from './Components/Modal/Modal.types';
+import modalReducer from './LegoComponents/Modal/Modal.reducer';
+import { IModalState } from './LegoComponents/Modal/Modal.types';
 
 // To store a state into master State, just add your reducer into State Interface.
 export interface State {
