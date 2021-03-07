@@ -20,6 +20,7 @@ import {
 import { IError, IModalState } from '../../../../Redux/LegoComponents/Modal/Modal.types';
 import { rootState } from '../../../../Redux/root-reducer';
 import { handleOnError, handleOnFileLoad } from './UploadData.utils';
+import ButtonBar from '../../ButtonBar/ButtonBar';
 
 const buttonRef : any = React.createRef();
 
@@ -41,7 +42,7 @@ const UploadData = () => {
       { !data && !error && UploadBody}
       { data && fileName && UploadSuccessBody(fileName, teamName, (e) => setTeamName(e.target.value))}
       { error && fileName && UploadFailedBody(fileName, error)}
-
+      <ButtonBar disableContinue={!teamName} />
     </FlexColumnContainer>
   );
 };

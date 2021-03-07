@@ -15,19 +15,30 @@ export const FlexButtonContainer = styled.div`
   padding: 32px;
 `;
 
+export const WhiteSpace = styled.div`
+  /* Layout Properties */
+  width: 100%;
+  height: 100%;
+`;
+
 export const ContinueButton = styled.button`
   width: 97px;
   height: 36px;
   /* UI Properties */
-  background: ${disableGray} 0 0 no-repeat padding-box;
-  color: ${textDisableButton}; ;
+  background: ${primaryBlue} 0 0 no-repeat padding-box;
+  color: ${pureWhite}; ;
   border-radius: 8px;
-  opacity: 0.2;
   margin-left: 8px;
   :hover {
     background-color:  ${primaryBlue};
     opacity: 1;
     color:  ${pureWhite};
+  }
+  :disabled {
+    background: ${disableGray};
+    color: ${textDisableButton} ;
+    opacity: 0.2;
+    cursor: default;
   }
 `;
 

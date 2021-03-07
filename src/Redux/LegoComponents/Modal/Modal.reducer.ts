@@ -13,12 +13,12 @@ export default function modalReducer(
     case EModalActionTypes.NEXT_PROGRESS_STEP:
       return {
         ...state,
-        progress: state.progressStep + 1,
+        progressStep: state.progressStep + 1,
       };
     case EModalActionTypes.BACK_PROGRESS_STEP:
       return {
         ...state,
-        progress: state.progressStep - 1,
+        progressStep: state.progressStep - 1,
       };
     case EModalActionTypes.UPDATE_MODAL_DATA:
       return {

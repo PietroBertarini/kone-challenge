@@ -1,15 +1,17 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import { CSVReader } from 'react-papaparse';
 import {
   BackButton,
   ContinueButton,
   FlexButtonContainer,
   ReUploadButton,
+  WhiteSpace,
 } from './ButtonBar.styles';
 import { IModalState } from '../../../Redux/LegoComponents/Modal/Modal.types';
 import { rootState } from '../../../Redux/root-reducer';
 import { handleOnError, handleOnFileLoad } from '../ModalBodys/UploadData/UploadData.utils';
+import { backModalProgress, nextModalProgress } from '../../../Redux/LegoComponents/Modal/Modal.actions';
 
 const buttonRef : any = React.createRef();
 
@@ -20,46 +22,53 @@ export function handleOpenDialog(e: any) {
   }
 };
 
-const ButtonBar = () => {
+interface OwnProps {
+    disableContinue : boolean
+}
+
+const ButtonBar = ({ disableContinue } : OwnProps) => {
   const modalRedux : IModalState = useSelector((state : rootState) => state.modal);
   const { progressStep, error } = modalRedux;
-  // const isActive = progressStep >= stepOrder;
   const haveAnyError = error !== undefined;
+  const dispatch = useDispatch();
   return (
-    <FlexButtonContainer>
-      {progressStep > 1 && (
-        <BackButton>
+    <>
+      <WhiteSpace />
+      <FlexButtonContainer>
+        {progressStep > 1 && (
+        <BackButton onClick={() => { dispatch(backModalProgress()); }}>
           Back
         </BackButton>
-      )}
-      {!haveAnyError && (
-      <ContinueButton>
-        Continue
-      </ContinueButton>
-      )}
-      {haveAnyError && (
-      <CSVReader
-        ref={buttonRef}
-        onFileLoad={handleOnFileLoad}
-        onError={handleOnError}
-        noDrag
-        progressBarColor="#2F54D0"
-      >
-        {() => (
-          <aside
-            style={{
-              cursor: 'pointer',
-            }}
-          >
-            <ReUploadButton onClick={handleOpenDialog}>
-              Re-Upload File
-            </ReUploadButton>
-          </aside>
         )}
-      </CSVReader>
+        {!haveAnyError && (
+          <ContinueButton disabled={disableContinue} onClick={() => { dispatch(nextModalProgress()); }}>
+            Continue
+          </ContinueButton>
+        )}
+        {haveAnyError && (
+          <CSVReader
+            ref={buttonRef}
+            onFileLoad={handleOnFileLoad}
+            onError={handleOnError}
+            noDrag
+            progressBarColor="#2F54D0"
+          >
+            {() => (
+              <aside
+                style={{
+                  cursor: 'pointer',
+                }}
+              >
+                <ReUploadButton onClick={handleOpenDialog}>
+                  Re-Upload File
+                </ReUploadButton>
+              </aside>
+            )}
+          </CSVReader>
 
-      )}
-    </FlexButtonContainer>
+        )}
+      </FlexButtonContainer>
+    </>
   );
 };
 

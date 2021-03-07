@@ -1,8 +1,6 @@
 /* Modal Types */
 export enum EProgressStepOfModal {
-  UPLOAD_FAILED,
   UPLOAD_DATA,
-  UPLOAD_SUCCESS,
   PLAYER_STATUS,
   FAVORITE,
   COMPLETE,
