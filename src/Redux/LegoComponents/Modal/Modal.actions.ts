@@ -1,18 +1,18 @@
 import {
   EModalActionTypes,
-  EProgressStateOfModal,
   INextModalProgress,
   IChangeModalProgress,
   IUpdateModalData,
+  EProgressStepOfModal,
 } from './Modal.types';
 
 export const nextModalProgress = () : INextModalProgress => ({
-  type: EModalActionTypes.NEXT_PROGRESS_STATE,
+  type: EModalActionTypes.NEXT_PROGRESS_STEP,
 });
 
-export const changeModalProgress = (newProgressState: EProgressStateOfModal) :
+export const changeModalProgress = (newProgressState: EProgressStepOfModal) :
     IChangeModalProgress => ({
-  type: EModalActionTypes.CHANGE_PROGRESS_STATE,
+  type: EModalActionTypes.CHANGE_PROGRESS_STEP,
   payload: newProgressState,
 });
 

@@ -1,9 +1,9 @@
 import {
-  EModalActionType, EModalActionTypes, EProgressStateOfModal, IModalState,
+  EModalActionType, EModalActionTypes, EProgressStepOfModal, IModalState,
 } from './Modal.types';
 
 const INITIAL_STATE : IModalState = {
-  progress: EProgressStateOfModal.UPLOAD_DATA,
+  progressStep: EProgressStepOfModal.UPLOAD_DATA,
   data: [],
 };
 
@@ -11,7 +11,7 @@ export default function modalReducer(
   state: IModalState = INITIAL_STATE, action: EModalActionType,
 ) {
   switch (action.type) {
-    case EModalActionTypes.CHANGE_PROGRESS_STATE:
+    case EModalActionTypes.CHANGE_PROGRESS_STEP:
       return {
         ...state,
         progress: action.payload,
@@ -21,10 +21,10 @@ export default function modalReducer(
         ...state,
         data: action.payload,
       };
-    case EModalActionTypes.NEXT_PROGRESS_STATE:
+    case EModalActionTypes.NEXT_PROGRESS_STEP:
       return {
         ...state,
-        progress: state.progress + 1,
+        progress: state.progressStep + 1,
       };
     default:
       return state;
