@@ -34,6 +34,8 @@ module.exports = {
     'no-console': ['warn', { allow: ['warn'] }],
     'import/prefer-default-export': 'off',
     'import/no-extraneous-dependencies': 'off',
+    'no-shadow': 'off',
+    '@typescript-eslint/no-shadow': 'error',
     '@typescript-eslint/explicit-function-return-type': 'off',
     '@typescript-eslint/explicit-member-accessibility': 'off',
     '@typescript-eslint/no-explicit-any': 'off',

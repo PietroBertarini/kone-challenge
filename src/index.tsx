@@ -1,17 +1,22 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
+import { Provider } from 'react-redux';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import './Assets/Fonts/Poppins/Poppins-Medium.ttf';
 import './Assets/Fonts/Poppins/Poppins-Light.ttf';
 import './Assets/Fonts/Sofia/Sofia Pro Medium Az.otf';
 import GlobalStyles from './global.styles';
+import { store } from './Redux/store';
 
 ReactDOM.render(
+
   <React.StrictMode>
-    <GlobalStyles />
-    <App />
+    <Provider store={store}>
+      <GlobalStyles />
+      <App />
+    </Provider>
   </React.StrictMode>,
   document.getElementById('root'),
 );
