@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { ImportButton, Logo, Navbar } from './Home.styles';
-import Modal from '../../LegoComponent/Modal/Modal';
+import Modal from '../../LegoComponents/Modal/Modal';
 
 const Home = () => {
   const [isOpen, setIsOpen] = useState(false);
