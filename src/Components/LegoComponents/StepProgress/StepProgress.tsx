@@ -8,10 +8,10 @@ import { FirstStep, LastStep, MiddleStep } from '../Steps/Steps';
 
 const StepProgress = () => (
   <FlexContainer>
-    <FirstStep iconImage={faUpload} text="Upload Data" stepOrder={1} />
-    <MiddleStep iconImage={faFootballBall} text="Player Status" stepOrder={2} />
-    <MiddleStep iconImage={faStar} text="Favorite" stepOrder={3} />
-    <LastStep iconImage={faCheck} text="Complete" stepOrder={4} />
+    <FirstStep iconImage={faUpload} text="Upload Data" stepOrder={0} />
+    <MiddleStep iconImage={faFootballBall} text="Player Status" stepOrder={1} />
+    <MiddleStep iconImage={faStar} text="Favorite" stepOrder={2} />
+    <LastStep iconImage={faCheck} text="Complete" stepOrder={3} />
   </FlexContainer>
 );
 

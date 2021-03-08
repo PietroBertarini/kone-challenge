@@ -10,7 +10,7 @@ export function checkCsvErrors(data: any) : IError | undefined {
       errorHeader: 'Upload Failed',
     };
   }
-  const arrayOfBooleans = data.map((cellOfCsv) => cellOfCsv.data.includes(''));
+  const arrayOfBooleans = data.map((rowOfCsv) => Object.values(rowOfCsv.data).includes(''));
   const haveAnyEmptyField = arrayOfBooleans.includes(true);
   if (haveAnyEmptyField) {
     return {
@@ -27,7 +27,8 @@ export function handleOnFileLoad(data: any, file: any) {
   if (haveSomeError) {
     store.dispatch(updateModalError(haveSomeError, file.name));
   } else {
-    store.dispatch(updateModalData(data, file.name));
+    const jsonOfCsv = data.map((rowOfCsv) => rowOfCsv.data);
+    store.dispatch(updateModalData(jsonOfCsv, file.name));
   }
 };
 

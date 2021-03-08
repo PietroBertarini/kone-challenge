@@ -55,6 +55,9 @@ const UploadBody = (
       onError={handleOnError}
       noDrag
       progressBarColor="#2F54D0"
+      config={{
+        header: true,
+      }}
     >
       {() => (
         <aside

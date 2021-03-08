@@ -23,7 +23,7 @@ export function handleOpenDialog(e: any) {
 };
 
 interface OwnProps {
-    disableContinue : boolean
+    disableContinue ?: boolean
 }
 
 const ButtonBar = ({ disableContinue } : OwnProps) => {
@@ -52,6 +52,9 @@ const ButtonBar = ({ disableContinue } : OwnProps) => {
             onError={handleOnError}
             noDrag
             progressBarColor="#2F54D0"
+            config={{
+              header: true,
+            }}
           >
             {() => (
               <aside
