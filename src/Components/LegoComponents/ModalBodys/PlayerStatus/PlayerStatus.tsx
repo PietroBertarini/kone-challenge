@@ -11,6 +11,7 @@ import { IModalState } from '../../../../Redux/LegoComponents/Modal/Modal.types'
 import { rootState } from '../../../../Redux/root-reducer';
 import ButtonBar from '../../ButtonBar/ButtonBar';
 import { BodyHeader } from '../UploadData/UploadData.styles';
+import { Item } from '../../Dropdown/Dropdown.styles';
 
 const buttonRef : any = React.createRef();
 
@@ -23,8 +24,9 @@ export function handleOpenDialog(e: any) {
 
 const PlayerStatus = () => {
   const modalRedux : IModalState = useSelector((state : rootState) => state.modal);
-  const { data, error, fileName } = modalRedux;
-  const [teamName, setTeamName] = useState('');
+  const { data } = modalRedux;
+  const tableHeaderKeys = ['Player Name', '#', 'Pos', 'College', 'Status'];
+  const playerStatus = ['Active', 'Injured', 'Practice', 'Suspended'];
 
   return (
     <FlexColumnContainer>
@@ -33,42 +35,25 @@ const PlayerStatus = () => {
         <Table>
           <TableHeader>
             <HeaderTableRow>
-              <HeaderTableText>Company</HeaderTableText>
-              <HeaderTableText>Contact</HeaderTableText>
-              <HeaderTableText>Country</HeaderTableText>
+              {
+                tableHeaderKeys.map((key) => (
+                  <HeaderTableText>{key}</HeaderTableText>
+                ))
+              }
             </HeaderTableRow>
           </TableHeader>
           <TableBody>
-            <DataTableRow>
-              <DataTableText>Alfreds Futterkiste</DataTableText>
-              <DataTableText>Maria Anders</DataTableText>
-              <DataTableText>Germany</DataTableText>
-            </DataTableRow>
-            <DataTableRow>
-              <DataTableText>Alfreds Futterkiste</DataTableText>
-              <DataTableText>Maria Anders</DataTableText>
-              <DataTableText>Germany</DataTableText>
-            </DataTableRow>
-            <DataTableRow>
-              <DataTableText>Alfreds Futterkiste</DataTableText>
-              <DataTableText>Maria Anders</DataTableText>
-              <DataTableText>Germany</DataTableText>
-            </DataTableRow>
-            <DataTableRow>
-              <DataTableText>Alfreds Futterkiste</DataTableText>
-              <DataTableText>Maria Anders</DataTableText>
-              <DataTableText>Germany</DataTableText>
-            </DataTableRow>
-            <DataTableRow>
-              <DataTableText>Alfreds Futterkiste</DataTableText>
-              <DataTableText>Maria Anders</DataTableText>
-              <DataTableText>Germany</DataTableText>
-            </DataTableRow>
-            <DataTableRow>
-              <DataTableText>Alfreds Futterkiste</DataTableText>
-              <DataTableText>Maria Anders</DataTableText>
-              <DataTableText>Germany</DataTableText>
-            </DataTableRow>
+            {
+              data.map((row) => (
+                <DataTableRow>
+                  {
+                    tableHeaderKeys.map((key) => (
+                      <DataTableText>{row[key]}</DataTableText>
+                    ))
+                  }
+                </DataTableRow>
+              ))
+            }
           </TableBody>
         </Table>
       </Test>
