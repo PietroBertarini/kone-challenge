@@ -47,6 +47,7 @@ export default createGlobalStyle`
     border: none;
     text-align: center;
     font-size: 14px/21px;
+    background-color: transparent;
   }
 
 `;

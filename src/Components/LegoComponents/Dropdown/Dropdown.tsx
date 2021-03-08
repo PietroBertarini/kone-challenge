@@ -8,11 +8,11 @@ import {
 } from './Dropdown.styles';
 
 interface OwnProps {
-    itensArray: any, prompt: string, onChange: any, id: string, label: string, value?: any
+    itensArray: any, prompt: string, onChange: any, value?: any
 }
 
 function Dropdown({
-  itensArray, prompt, onChange, value, id, label,
+  itensArray, prompt, onChange, value,
 } : OwnProps) {
   const [open, setOpen] = useState(false);
   const ref = useRef(null);
@@ -27,7 +27,7 @@ function Dropdown({
     <DropdownStyle>
       <Control onClick={() => setOpen((prevState) => !prevState)}>
         <SelectedValue isOpen={open} ref={ref}>
-          {value ? value[label] : prompt}
+          {value || prompt}
         </SelectedValue>
         <Arrow>
           { open ? (<FontAwesomeIcon icon={faChevronUp} />) : (<FontAwesomeIcon icon={faChevronDown} />)}
@@ -36,8 +36,8 @@ function Dropdown({
       <Itens isOpen={open} className={`options ${open ? 'open' : null}`}>
         {
           itensArray.map((item) => (
-            <Item isSelected={value === item} key={item[id]} onClick={() => { onChange(item); setOpen(false); }}>
-              {item[label]}
+            <Item isSelected={value === item} key={item} onClick={() => { onChange(item); setOpen(false); }}>
+              {item}
             </Item>
           ))
         }

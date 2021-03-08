@@ -1,12 +1,12 @@
 import styled from 'styled-components';
 import {
-  activeBlue, borderGray, fontBlack, primaryBlue, pureBlack,
+  activeBlue, borderGray, fontBlack, primaryBlue, pureBlack, pureWhite,
 } from '../../../global.styles';
 
-export const DropdownStyle = styled.div`
+export const DropdownStyle = styled.td`
   position: relative;
   color: #333;
-  background-color: transparent;
+  background-color: ${pureWhite};
   width: 150px;
 `;
 
@@ -29,7 +29,7 @@ export const SelectedValue = styled.button<SelectedProps>`
   line-height: 1.5;
   width: 150px;
   font-size: 1rem;
-  background-color: #fff;
+  background-color: ${pureWhite};
   border: 1px solid;
   border-color: ${(props) => (props.isOpen ? 'var(--isOpen)' : 'var(--isClose)')};
   border-bottom-color: ${(props) => (props.isOpen ? 'transparent' : 'var(--isClose)')};
@@ -55,8 +55,10 @@ export const Item = styled.button<ItemProps>`
   box-sizing: border-box;
   cursor: pointer;
   text-align: start;
+  background-color: ${pureWhite};
   display: block;
   width: 150px;
+  z-index: 2;
   padding: 8px 10px;
   color: ${(props) => (props.isSelected ? 'var(--isOpen)' : 'rgba(51, 51, 51, 0.8)')};
   :hover{
@@ -72,7 +74,7 @@ export const Itens = styled.div<ItensProps>`
   width: 150px;
   
   display: ${(props) => (props.isOpen ? 'block' : 'none')};
-  background-color: #fff;
+  background-color: ${pureWhite};
   border-radius: 0 0 8px 8px;
   border: 1px solid ${primaryBlue};
   border-top: transparent;

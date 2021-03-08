@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import {
-  activeBlue, borderGray, errorRed, fontBlack, labelGray, primaryBlue, pureBlack, pureWhite,
+  borderGray, fontBlack, labelGray, pureWhite,
 } from '../../../../global.styles';
 import { BodyHeader } from '../UploadData/UploadData.styles';
 
@@ -17,6 +17,7 @@ export const Test = styled.div`
 export const TableHeader = styled.thead`
   position: sticky;
   top: 0;
+z-index: 10;
   background-color: ${pureWhite};
   
 `;
@@ -50,6 +51,7 @@ export const Table = styled.table`
 export const HeaderTableRow = styled.tr`
     background-color: ${pureWhite};
     height: 36px;
+  z-index: 10;
 `;
 
 export const BodyHeaderPlayer = styled(BodyHeader)`
@@ -61,6 +63,7 @@ export const HeaderTableText = styled.th`
   /* UI Properties */
   background-color: ${pureWhite};
   top: 0;
+  z-index: 10;
   position: sticky;
   color: ${labelGray};
   text-align: left;

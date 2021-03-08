@@ -10,8 +10,7 @@ import {
 import { IModalState } from '../../../../Redux/LegoComponents/Modal/Modal.types';
 import { rootState } from '../../../../Redux/root-reducer';
 import ButtonBar from '../../ButtonBar/ButtonBar';
-import { BodyHeader } from '../UploadData/UploadData.styles';
-import { Item } from '../../Dropdown/Dropdown.styles';
+import Dropdown from '../../Dropdown/Dropdown';
 
 const buttonRef : any = React.createRef();
 
@@ -47,9 +46,21 @@ const PlayerStatus = () => {
               data.map((row) => (
                 <DataTableRow>
                   {
-                    tableHeaderKeys.map((key) => (
-                      <DataTableText>{row[key]}</DataTableText>
-                    ))
+                    tableHeaderKeys.map((key) => {
+                      if (key === 'Status') {
+                        return (
+                          <Dropdown
+                            itensArray={playerStatus}
+                            prompt={row[key]}
+                            onChange={() => console.log('Atualizar status player')}
+                            value={row[key]}
+                          />
+                        );
+                      }
+                      return (
+                        <DataTableText>{row[key]}</DataTableText>
+                      );
+                    })
                   }
                 </DataTableRow>
               ))
