@@ -10,6 +10,7 @@ import StepProgress from '../StepProgress/StepProgress';
 import UploadData from '../ModalBodys/UploadData/UploadData';
 import { EProgressStepOfModal, IModalState } from '../../../Redux/LegoComponents/Modal/Modal.types';
 import { rootState } from '../../../Redux/root-reducer';
+import PlayerStatus from '../ModalBodys/PlayerStatus/PlayerStatus';
 
 interface OwnProps {
     open: boolean,
@@ -31,9 +32,9 @@ const Modal = ({ open, onClose }: OwnProps) => {
         </HeaderBar>
         <StepProgress />
         {progressStep === EProgressStepOfModal.UPLOAD_DATA && (<UploadData />)}
-        {progressStep === EProgressStepOfModal.PLAYER_STATUS && (<UploadData />)}
-        {progressStep === EProgressStepOfModal.FAVORITE && (<UploadData />)}
-        {progressStep === EProgressStepOfModal.COMPLETE && (<UploadData />)}
+        {progressStep === EProgressStepOfModal.PLAYER_STATUS && (<PlayerStatus />)}
+        {progressStep === EProgressStepOfModal.FAVORITE && (<div />)}
+        {progressStep === EProgressStepOfModal.COMPLETE && (<div />)}
       </Container>
     </Overlay>,
     portalDiv,
