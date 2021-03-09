@@ -11,8 +11,8 @@ import {
   StyledIcon,
   StyledText,
 } from './Steps.styles';
-import { rootState } from '../../../Redux/root-reducer';
-import { IModalState } from '../../../Redux/LegoComponents/Modal/Modal.types';
+import { rootState } from '../../../../Redux/root-reducer';
+import { IModalState } from '../../../../Redux/LegoComponents/Modal/Modal.types';
 
 interface StepProps {
     iconImage: IconProp,

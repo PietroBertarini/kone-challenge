@@ -4,7 +4,7 @@ import {
   faFootballBall, faStar, faUpload,
 } from '@fortawesome/free-solid-svg-icons';
 import { FlexContainer } from './StepProgress.styles';
-import { FirstStep, LastStep, MiddleStep } from '../Steps/Steps';
+import { FirstStep, LastStep, MiddleStep } from './Steps/Steps';
 
 const StepProgress = () => (
   <FlexContainer>

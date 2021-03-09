@@ -14,7 +14,6 @@ export const FlexColumnContainer = styled.div`
   overflow:auto;
   justify-content: start;
   align-items: start;
-  
 `;
 
 export const FlexRowContainer = styled.div`

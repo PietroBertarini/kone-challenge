@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import {
   backgroundWhite, errorRed, fontBlack, lightGray, primaryBlue, pureWhite,
-} from '../../../global.styles';
+} from '../../../../global.styles';
 
 export const StepFlexContainer = styled.div`
   /* Layout Properties */
