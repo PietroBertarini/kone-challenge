@@ -6,7 +6,6 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import './Assets/Fonts/Poppins/Poppins-Medium.ttf';
 import './Assets/Fonts/Poppins/Poppins-Light.ttf';
-import './Assets/Fonts/Sofia/Sofia Pro Medium Az.otf';
 import GlobalStyles from './global.styles';
 import { store } from './Redux/store';
 
