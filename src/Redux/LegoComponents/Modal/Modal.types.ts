@@ -22,6 +22,7 @@ export enum EModalActionTypes {
   UPDATE_MODAL_DATA = 'UPDATE_MODAL_DATA',
   UPDATE_MODAL_ERROR = 'UPDATE_MODAL_ERROR',
   UPDATE_FAVORITE_PLAYER_INDEX = 'UPDATE_FAVORITE_PLAYER_INDEX',
+  UPDATE_TEAM_NAME = 'UPDATE_TEAM_NAME',
 }
 
 export interface IBackModalProgress {
@@ -37,6 +38,11 @@ export interface IUpdateFavoritePlayerIndex {
   type: typeof EModalActionTypes.UPDATE_FAVORITE_PLAYER_INDEX,
   payload: { index: number}
 }
+
+export interface IUpdateTeamName {
+  type: typeof EModalActionTypes.UPDATE_TEAM_NAME,
+  payload: { teamName: string}
+}
 export interface IUpdateModalError {
   type: typeof EModalActionTypes.UPDATE_MODAL_ERROR,
   payload: {error: IError, fileName: string }
@@ -51,11 +57,13 @@ export type EModalActionType =
     | IUpdateModalData
     | IUpdateModalError
     | IUpdateFavoritePlayerIndex
+    | IUpdateTeamName
 
 export interface IModalState {
   progressStep: EProgressStepOfModal,
   data?: any, // update to a type in a future
   error?: IError,
   fileName?: string,
-  favoritePlayerIndex?: number
+  favoritePlayerIndex?: number,
+  teamName?: string
 }

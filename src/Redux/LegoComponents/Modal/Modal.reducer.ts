@@ -39,6 +39,11 @@ export default function modalReducer(
         ...state,
         favoritePlayerIndex: action.payload.index,
       };
+    case EModalActionTypes.UPDATE_TEAM_NAME:
+      return {
+        ...state,
+        teamName: action.payload.teamName,
+      };
 
     default:
       return state;

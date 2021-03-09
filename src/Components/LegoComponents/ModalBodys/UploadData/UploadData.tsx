@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { CSVReader } from 'react-papaparse';
-import { useSelector } from 'react-redux';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faCheck, faTimes, faTimesCircle,
@@ -21,6 +21,7 @@ import { IError, IModalState } from '../../../../Redux/LegoComponents/Modal/Moda
 import { rootState } from '../../../../Redux/root-reducer';
 import { handleOnError, handleOnFileLoad } from './UploadData.utils';
 import ButtonBar from '../../ButtonBar/ButtonBar';
+import { updateTeamName } from '../../../../Redux/LegoComponents/Modal/Modal.actions';
 
 const buttonRef : any = React.createRef();
 
@@ -35,6 +36,8 @@ const UploadData = () => {
   const modalRedux : IModalState = useSelector((state : rootState) => state.modal);
   const { data, error, fileName } = modalRedux;
   const [teamName, setTeamName] = useState('');
+  const dispatch = useDispatch();
+  useEffect(() => () => { dispatch(updateTeamName(teamName)); }, [dispatch, teamName]);
 
   return (
     <FlexColumnContainer>
