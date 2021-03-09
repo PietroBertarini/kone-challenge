@@ -4,11 +4,15 @@ import {
   IBackModalProgress,
   IUpdateModalData,
   IUpdateModalError,
-  IError, IUpdateFavoritePlayerIndex, IUpdateTeamName,
+  IError, IUpdateFavoritePlayerIndex, IUpdateTeamName, ICleanModalState,
 } from './Modal.types';
 
 export const nextModalProgress = () : INextModalProgress => ({
   type: EModalActionTypes.NEXT_PROGRESS_STEP,
+});
+
+export const cleanModalState = () : ICleanModalState => ({
+  type: EModalActionTypes.CLEAN_MODAL_STATE,
 });
 
 export const backModalProgress = () :

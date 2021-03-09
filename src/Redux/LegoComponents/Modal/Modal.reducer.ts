@@ -2,7 +2,7 @@ import {
   EModalActionType, EModalActionTypes, EProgressStepOfModal, IModalState,
 } from './Modal.types';
 
-const INITIAL_STATE : IModalState = {
+export const INITIAL_STATE : IModalState = {
   progressStep: EProgressStepOfModal.UPLOAD_DATA,
 };
 
@@ -44,7 +44,6 @@ export default function modalReducer(
         ...state,
         teamName: action.payload.teamName,
       };
-
     default:
       return state;
   }

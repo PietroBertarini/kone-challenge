@@ -23,8 +23,11 @@ export enum EModalActionTypes {
   UPDATE_MODAL_ERROR = 'UPDATE_MODAL_ERROR',
   UPDATE_FAVORITE_PLAYER_INDEX = 'UPDATE_FAVORITE_PLAYER_INDEX',
   UPDATE_TEAM_NAME = 'UPDATE_TEAM_NAME',
+  CLEAN_MODAL_STATE = 'CLEAN_MODAL_STATE',
 }
-
+export interface ICleanModalState {
+  type: typeof EModalActionTypes.CLEAN_MODAL_STATE,
+}
 export interface IBackModalProgress {
   type: typeof EModalActionTypes.BACK_PROGRESS_STEP,
 }
@@ -58,6 +61,7 @@ export type EModalActionType =
     | IUpdateModalError
     | IUpdateFavoritePlayerIndex
     | IUpdateTeamName
+    | ICleanModalState
 
 export interface IModalState {
   progressStep: EProgressStepOfModal,
