@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
+import { v4 as uuidv4 } from 'uuid';
 import { ImportButton, Logo, Navbar } from './Home.styles';
 import Modal from '../../LegoComponents/Modal/Modal';
 import { EProgressStepOfModal, IModalState } from '../../../Redux/LegoComponents/Modal/Modal.types';
@@ -41,22 +42,22 @@ const Home = () => {
           <OverflowWrapper>
             <Table>
               <TableHeader>
-                <HeaderTableRow>
-                  {tableHeaderKeys.map((key) => (<HeaderTableText>{key}</HeaderTableText>))}
+                <HeaderTableRow key={uuidv4()}>
+                  {tableHeaderKeys.map((key) => (<HeaderTableText key={uuidv4()}>{key}</HeaderTableText>))}
                 </HeaderTableRow>
               </TableHeader>
               <TableBody>
-                <DataTableRow>
+                <DataTableRow key={uuidv4()}>
                   {tableHeaderKeys.map((key) => (
-                    <DataTableText isFavoritePlayer>{favoritePlayer[key]}</DataTableText>
+                    <DataTableText key={uuidv4()} isFavoritePlayer>{favoritePlayer[key]}</DataTableText>
                   ))}
                 </DataTableRow>
                 {data.map((row, index) => {
                   if (index !== favoritePlayerIndex) {
                     return (
-                      <DataTableRow>
+                      <DataTableRow key={uuidv4()}>
                         {
-                            tableHeaderKeys.map((key) => (<DataTableText>{row[key]}</DataTableText>))
+                            tableHeaderKeys.map((key) => (<DataTableText key={uuidv4()}>{row[key]}</DataTableText>))
                           }
                       </DataTableRow>
                     );

@@ -48,7 +48,7 @@ export const SelectedValue = styled.button<SelectedProps>`
     cursor: pointer;
   }
 `;
-export const Control = styled.button`
+export const Control = styled.div`
     
 `;
 interface ItemProps {

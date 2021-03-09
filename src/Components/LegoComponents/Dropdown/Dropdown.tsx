@@ -3,6 +3,7 @@ import {
   faChevronUp, faChevronDown,
 } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { v4 as uuidv4 } from 'uuid';
 import {
   Arrow, Control, DropdownStyle, Item, Itens, SelectedValue,
 } from './Dropdown.styles';
@@ -42,7 +43,14 @@ const Dropdown = ({
       <Itens isOpen={open} className={`options ${open ? 'open' : null}`}>
         {
           itensArray.map((item) => (
-            <Item isSelected={value === item} key={item} onClick={() => { onChange(item); setOpen(false); }}>
+            <Item
+              isSelected={value === item}
+              key={uuidv4() + Math.random()}
+              onClick={() => {
+                onChange(item);
+                setOpen(false);
+              }}
+            >
               {item}
             </Item>
           ))

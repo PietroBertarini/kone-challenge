@@ -1,6 +1,7 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 
+import { v4 as uuidv4 } from 'uuid';
 import {
   DataTableRow,
   DataTableText,
@@ -38,10 +39,10 @@ const PlayerStatus = () => {
       <OverflowWrapper>
         <Table>
           <TableHeader>
-            <HeaderTableRow>
+            <HeaderTableRow key={uuidv4()}>
               {
                 tableHeaderKeys.map((key) => (
-                  <HeaderTableText>{key}</HeaderTableText>
+                  <HeaderTableText key={uuidv4()}>{key}</HeaderTableText>
                 ))
               }
             </HeaderTableRow>
@@ -49,7 +50,7 @@ const PlayerStatus = () => {
           <TableBody>
             {
               data.map((row, index) => (
-                <DataTableRow>
+                <DataTableRow key={uuidv4()}>
                   {
                     tableHeaderKeys.map((key) => {
                       if (key === 'Status') {
@@ -59,11 +60,12 @@ const PlayerStatus = () => {
                             prompt={row[key]}
                             onChange={(val) => updatePlayerStatus(val, index)}
                             value={row[key]}
+                            key={uuidv4()}
                           />
                         );
                       }
                       return (
-                        <DataTableText>{row[key]}</DataTableText>
+                        <DataTableText key={uuidv4()}>{row[key]}</DataTableText>
                       );
                     })
                   }
