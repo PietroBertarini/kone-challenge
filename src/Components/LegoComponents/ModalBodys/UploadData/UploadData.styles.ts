@@ -11,7 +11,7 @@ export const FlexColumnContainer = styled.div`
   flex-direction: column;
   padding-left: 32px;
   padding-right: 32px;
-
+  overflow:auto;
   justify-content: start;
   align-items: start;
   

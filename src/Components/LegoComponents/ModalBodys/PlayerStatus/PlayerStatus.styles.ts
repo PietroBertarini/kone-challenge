@@ -13,19 +13,6 @@ export const OverflowWrapper = styled.div`
   align-content: start;
   overflow-y: auto;
 `;
-export const FlexColumnContainer = styled.div`
-  /* Layout Properties */
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  padding-left: 32px;
-  padding-right: 32px;
-  overflow:auto;
-  justify-content: start;
-  align-items: start;
-
-`;
 
 export const TableHeader = styled.thead`
   position: sticky;

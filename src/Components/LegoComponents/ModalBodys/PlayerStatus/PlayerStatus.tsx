@@ -4,13 +4,14 @@ import { useSelector, useDispatch } from 'react-redux';
 import {
   DataTableRow,
   DataTableText, HeaderTableRow, HeaderTableText, Table, TableBody, TableHeader,
-  OverflowWrapper, BodyHeaderPlayer, FlexColumnContainer,
+  OverflowWrapper, BodyHeaderPlayer,
 } from './PlayerStatus.styles';
 import { IModalState } from '../../../../Redux/LegoComponents/Modal/Modal.types';
 import { rootState } from '../../../../Redux/root-reducer';
 import ButtonBar from '../../ButtonBar/ButtonBar';
 import Dropdown from '../../Dropdown/Dropdown';
 import { updateModalData } from '../../../../Redux/LegoComponents/Modal/Modal.actions';
+import { FlexColumnContainer } from '../UploadData/UploadData.styles';
 
 const PlayerStatus = () => {
   const dispatch = useDispatch();
