@@ -7,18 +7,13 @@ import { BodyHeader } from '../UploadData/UploadData.styles';
 export const OverflowWrapper = styled.div`
   /* Layout Properties */
   width: 100%;
-  height: 4000px;
+  height: auto;
   display: flex;
   justify-items: start;
   align-content: start;
   overflow-y: auto;
 `;
-export const OverflowWrapperZero = styled(OverflowWrapper)`
-  /* Layout Properties */
-  width: 100%;
-  height: 100%;
-  overflow-y: auto;
-`;
+
 export const TableHeader = styled.thead`
   position: sticky;
   top: 0;

@@ -7,19 +7,14 @@ import {
 export const FlexButtonContainer = styled.div`
   /* Layout Properties */
   width: 100%;
-  height: 30px;
+  min-height: 20px;
+  height: 100%;
   display: flex;
   flex-direction: row;
-  justify-content: flex-end;
-  align-items: center;
   padding-bottom: 32px;
-  padding-top: 32px;
-`;
-
-export const WhiteSpace = styled.div`
-  /* Layout Properties */
-  width: 100%;
-  height: 100%;
+  padding-top: 16px;
+  justify-content: flex-end;
+  align-items: flex-end;
 `;
 
 export const ContinueButton = styled.button`

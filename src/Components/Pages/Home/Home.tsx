@@ -8,7 +8,7 @@ import { cleanModalState } from '../../../Redux/LegoComponents/Modal/Modal.actio
 import { FlexColumnContainer } from '../../LegoComponents/Modal/ModalBodys/UploadData/UploadData.styles';
 import {
   DataTableRow, DataTableText, HeaderTableRow, HeaderTableText,
-  OverflowWrapper, OverflowWrapperZero, Table, TableBody, TableHeader,
+  OverflowWrapper, Table, TableBody, TableHeader,
 } from '../../LegoComponents/Modal/ModalBodys/PlayerStatus/PlayerStatus.styles';
 
 const Home = () => {
@@ -37,7 +37,7 @@ const Home = () => {
       </Navbar>
       {data && progressStep > EProgressStepOfModal.COMPLETE && (
         <FlexColumnContainer>
-          <OverflowWrapperZero>
+          <OverflowWrapper>
             <Table>
               <TableHeader>
                 <HeaderTableRow>
@@ -64,7 +64,7 @@ const Home = () => {
                 })}
               </TableBody>
             </Table>
-          </OverflowWrapperZero>
+          </OverflowWrapper>
         </FlexColumnContainer>
       )}
     </>
