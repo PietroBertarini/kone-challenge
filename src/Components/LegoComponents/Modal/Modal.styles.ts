@@ -35,6 +35,20 @@ export const Container = styled.div`
   box-shadow: 0 9px 26px #0000003D;
   border-radius: 16px;
   opacity: 1;
+  animation: show .2s;
+  transform: scale(1);
+  @keyframes show {
+    from {
+      transform: scale(0);
+      opacity: 0;
+      z-index: -1;
+    }
+    to {
+      transform: scale(1);
+      opacity: 1;
+      z-index: 2;
+    }
+  }
 `;
 export const Header = styled.h2`
   /* Layout Properties */
