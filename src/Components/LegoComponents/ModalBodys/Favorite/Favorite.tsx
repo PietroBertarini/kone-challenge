@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 
 import { IModalState } from '../../../../Redux/LegoComponents/Modal/Modal.types';
 import { rootState } from '../../../../Redux/root-reducer';
 import ButtonBar from '../../ButtonBar/ButtonBar';
-import { updateFavoritePlayerIndex, updateModalData } from '../../../../Redux/LegoComponents/Modal/Modal.actions';
+import { updateFavoritePlayerIndex } from '../../../../Redux/LegoComponents/Modal/Modal.actions';
 import { FlexColumnContainer } from '../UploadData/UploadData.styles';
 import Checkbox from '../../Checkbox/Checkbox';
 import {
@@ -14,7 +14,7 @@ import {
   HeaderTableRow,
   TableHeader,
   HeaderTableText,
-  TableBody, DataTableRow,
+  TableBody,
   DataTableText,
   ClickableDataTableRow,
 } from '../PlayerStatus/PlayerStatus.styles';
@@ -70,7 +70,7 @@ const Favorite = () => {
           </TableBody>
         </Table>
       </OverflowWrapper>
-      <ButtonBar disableContinue={!favoritePlayerIndex === undefined} />
+      <ButtonBar disableContinue={favoritePlayerIndex === undefined} />
     </FlexColumnContainer>
   );
 };

@@ -12,6 +12,7 @@ import { EProgressStepOfModal, IModalState } from '../../../Redux/LegoComponents
 import { rootState } from '../../../Redux/root-reducer';
 import PlayerStatus from '../ModalBodys/PlayerStatus/PlayerStatus';
 import Favorite from '../ModalBodys/Favorite/Favorite';
+import Complete from '../ModalBodys/Complete/Complete';
 
 interface OwnProps {
     open: boolean,
@@ -35,7 +36,7 @@ const Modal = ({ open, onClose }: OwnProps) => {
         {progressStep === EProgressStepOfModal.UPLOAD_DATA && (<UploadData />)}
         {progressStep === EProgressStepOfModal.PLAYER_STATUS && (<PlayerStatus />)}
         {progressStep === EProgressStepOfModal.FAVORITE && (<Favorite />)}
-        {progressStep === EProgressStepOfModal.COMPLETE && (<div />)}
+        {progressStep === EProgressStepOfModal.COMPLETE && (<Complete />)}
       </Container>
     </Overlay>,
     portalDiv,
