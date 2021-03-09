@@ -63,7 +63,10 @@ export const HeaderTableText = styled.th`
 export const DataTableRow = styled.tr`
   height: 36px;
 `;
-
+export const ClickableDataTableRow = styled.tr`
+  height: 36px;
+  cursor: pointer;
+`;
 export const DataTableText = styled.td`
   /* UI Properties */
   text-align: left;

@@ -1,17 +1,23 @@
 import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 
-import {
-  DataTableRow,
-  DataTableText, HeaderTableRow, HeaderTableText, Table, TableBody, TableHeader,
-  OverflowWrapper, BodyHeaderPlayer,
-} from './Favorite.styles';
 import { IModalState } from '../../../../Redux/LegoComponents/Modal/Modal.types';
 import { rootState } from '../../../../Redux/root-reducer';
 import ButtonBar from '../../ButtonBar/ButtonBar';
 import { updateModalData } from '../../../../Redux/LegoComponents/Modal/Modal.actions';
 import { FlexColumnContainer } from '../UploadData/UploadData.styles';
 import Checkbox from '../../Checkbox/Checkbox';
+import {
+  OverflowWrapper,
+  Table,
+  BodyHeaderPlayer,
+  HeaderTableRow,
+  TableHeader,
+  HeaderTableText,
+  TableBody, DataTableRow,
+  DataTableText,
+  ClickableDataTableRow,
+} from '../PlayerStatus/PlayerStatus.styles';
 
 const Favorite = () => {
   const dispatch = useDispatch();
@@ -35,6 +41,7 @@ const Favorite = () => {
         <Table>
           <TableHeader>
             <HeaderTableRow>
+              <HeaderTableText>  </HeaderTableText>
               {
                 tableHeaderKeys.map((key) => (
                   <HeaderTableText>{key}</HeaderTableText>
@@ -45,18 +52,14 @@ const Favorite = () => {
           <TableBody>
             {
               data.map((row, index) => (
-                <DataTableRow>
+                <ClickableDataTableRow onClick={() => setChecked(!checked)}>
+                  <Checkbox checked={checked} onChange={() => setChecked(!checked)} />
                   {
-                    tableHeaderKeys.map((key) => {
-                      if (key === 'Player Name') {
-                        return (<DataTableText>{row[key]}</DataTableText>);
-                      }
-                      return (
-                        <DataTableText>{row[key]}</DataTableText>
-                      );
-                    })
+                    tableHeaderKeys.map((key) => (
+                      <DataTableText>{row[key]}</DataTableText>
+                    ))
                   }
-                </DataTableRow>
+                </ClickableDataTableRow>
               ))
             }
           </TableBody>

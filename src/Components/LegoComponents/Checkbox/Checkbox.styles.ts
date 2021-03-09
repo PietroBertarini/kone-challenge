@@ -3,10 +3,15 @@ import {
   barGray, borderGray, primaryBlue, pureWhite,
 } from '../../../global.styles';
 
-export const CheckboxContainer = styled.div`
+export const CheckboxContainer = styled.td`
   display: flex;
   align-items: center;
+  justify-content: center;
   cursor: pointer;
+  border: ${borderGray} 1px solid;
+  border-right-color: ${pureWhite};
+  height: 36px;
+  border-radius: 8px 0 0 8px;
   
 `;
 

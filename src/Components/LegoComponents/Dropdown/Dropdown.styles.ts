@@ -30,8 +30,7 @@ export const SelectedValue = styled.button<SelectedProps>`
   width: 150px;
   font-size: 1rem;
   background-color: ${pureWhite};
-  border: 1px solid;
-  border-color: ${(props) => (props.isOpen ? 'var(--isOpen)' : 'var(--isClose)')};
+  border: ${(props) => (props.isOpen ? 'var(--isOpen)' : 'var(--isClose)')} 1px solid;
   border-bottom-color: ${(props) => (props.isOpen ? 'transparent' : 'var(--isClose)')};
   border-radius: ${(props) => (props.isOpen ? '0px 8px 0px 0px' : '0px 8px 8px 0px')};
   box-sizing: border-box;
