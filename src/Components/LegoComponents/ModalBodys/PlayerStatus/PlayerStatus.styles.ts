@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import {
-  borderGray, fontBlack, labelGray, pureWhite,
+  borderGray, favoriteYellow, fontBlack, labelGray, lightGray, pureWhite,
 } from '../../../../global.styles';
 import { BodyHeader } from '../UploadData/UploadData.styles';
 
@@ -67,26 +67,34 @@ export const ClickableDataTableRow = styled.tr`
   height: 36px;
   cursor: pointer;
 `;
-export const DataTableText = styled.td`
+interface DataTableTextProps {
+  isChecked?: boolean;
+}
+export const DataTableText = styled.td<DataTableTextProps>`
+  --isCheckedBorder: ${favoriteYellow};
+  --isNotCheckedBorder: ${borderGray};
+  --isCheckedBack: ${lightGray};
+  --isNotCheckedBack: ${pureWhite};
   /* UI Properties */
   text-align: left;
   font: normal normal medium 12px/18px Poppins;
   letter-spacing: 0;
   color: ${fontBlack};
+  background-color: ${(props) => (props.isChecked ? 'var(--isCheckedBack)' : 'var(--isNotCheckedBack)')};
   opacity: 1;
-  border-top: 1px solid ${borderGray};
-  border-bottom: 1px solid ${borderGray};
+  border-top: 1px solid ${(props) => (props.isChecked ? 'var(--isCheckedBorder)' : 'var(--isNotCheckedBorder)')};
+  border-bottom: 1px solid ${(props) => (props.isChecked ? 'var(--isCheckedBorder)' : 'var(--isNotCheckedBorder)')};
   padding-left: 16px;
 
   &:first-child {
     border-top-left-radius: 8px;
     border-bottom-left-radius: 8px;
-    border-left: 1px solid ${borderGray};
+    border-left: 1px solid ${(props) => (props.isChecked ? 'var(--isCheckedBorder)' : 'var(--isNotCheckedBorder)')};
   }
 
   &:last-child {
     border-bottom-right-radius: 8px;
     border-top-right-radius: 8px;
-    border-right: 1px solid ${borderGray};
+    border-right: 1px solid ${(props) => (props.isChecked ? 'var(--isCheckedBorder)' : 'var(--isNotCheckedBorder)')};
   }
 `;

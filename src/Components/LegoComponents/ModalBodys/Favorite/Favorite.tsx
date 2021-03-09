@@ -56,7 +56,7 @@ const Favorite = () => {
                   <Checkbox checked={checked} onChange={() => setChecked(!checked)} />
                   {
                     tableHeaderKeys.map((key) => (
-                      <DataTableText>{row[key]}</DataTableText>
+                      <DataTableText isChecked={checked}>{row[key]}</DataTableText>
                     ))
                   }
                 </ClickableDataTableRow>

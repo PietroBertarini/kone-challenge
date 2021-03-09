@@ -1,26 +1,30 @@
 import styled from 'styled-components';
 import {
-  barGray, borderGray, primaryBlue, pureWhite,
+  barGray, borderGray, favoriteYellow, lightGray, primaryBlue, pureWhite,
 } from '../../../global.styles';
 
-export const CheckboxContainer = styled.td`
+interface CheckboxStyleProps {
+  isChecked?: boolean;
+}
+export const CheckboxStyle = styled.td<CheckboxStyleProps>`
+  --isCheckedBorder: ${favoriteYellow};
+  --isNotCheckedBorder: ${borderGray};
+  --isCheckedBack: ${lightGray};
+  --isNotCheckedBack: ${pureWhite};
   display: flex;
+  padding-left: 16px;
   align-items: center;
   justify-content: center;
+  background-color: ${(props) => (props.isChecked ? 'var(--isCheckedBack)' : 'var(--isNotCheckedBack)')};
   cursor: pointer;
-  border: ${borderGray} 1px solid;
-  border-right-color: ${pureWhite};
+  border: ${(props) => (props.isChecked ? 'var(--isCheckedBorder)' : 'var(--isNotCheckedBorder)')} 1px solid;
+  border-right-color: ${(props) => (props.isChecked ? 'var(--isCheckedBack)' : 'var(--isNotCheckedBack)')};
   height: 36px;
   border-radius: 8px 0 0 8px;
   
 `;
 
-interface IndicatorProps {
-  isChecked?: boolean;
-}
-export const Border = styled.div<IndicatorProps>`
-  --isChecked: ${primaryBlue};
-  --isNotCheced: ${pureWhite};
+export const Border = styled.div`
   position: relative;
   border-radius: 40px;
   margin-right: 8px;
@@ -32,10 +36,8 @@ export const Border = styled.div<IndicatorProps>`
   border: 1px solid ${barGray};
   opacity: 1;
 `;
-interface IndicatorProps {
-  isChecked?: boolean;
-}
-export const Indicator = styled.div<IndicatorProps>`
+
+export const Indicator = styled.div`
   z-index: 1;
   display: flex;
   align-items: center;

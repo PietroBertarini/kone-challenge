@@ -21,7 +21,7 @@ export const labelGray = '#8C8C8C';
 export const barGray = '#D1D1D1';
 // export const checkBoxGray = '#00000029';
 
-// export const favoriteYellow = '#ECBA17';
+export const favoriteYellow = '#ECBA17';
 
 /**
  * Font Size
