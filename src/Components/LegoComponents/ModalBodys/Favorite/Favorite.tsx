@@ -4,7 +4,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { IModalState } from '../../../../Redux/LegoComponents/Modal/Modal.types';
 import { rootState } from '../../../../Redux/root-reducer';
 import ButtonBar from '../../ButtonBar/ButtonBar';
-import { updateModalData } from '../../../../Redux/LegoComponents/Modal/Modal.actions';
+import { updateFavoritePlayerIndex, updateModalData } from '../../../../Redux/LegoComponents/Modal/Modal.actions';
 import { FlexColumnContainer } from '../UploadData/UploadData.styles';
 import Checkbox from '../../Checkbox/Checkbox';
 import {
@@ -22,16 +22,13 @@ import {
 const Favorite = () => {
   const dispatch = useDispatch();
   const modalRedux : IModalState = useSelector((state : rootState) => state.modal);
-  const { data, fileName } = modalRedux;
+  const { data, favoritePlayerIndex } = modalRedux;
   const tableHeaderKeys = ['Player Name', '#', 'Pos', 'College'];
-  const [checked, setChecked] = useState(false);
-  function updatePlayerStatus(newStatus: string, index: number) {
-    const newData = data;
-    newData[index].Status = newStatus;
-    if (fileName) dispatch(updateModalData(newData, fileName));
+  function isFavoritePlayer(actualIndex: number) {
+    return actualIndex === favoritePlayerIndex;
   }
-  function handleCheckboxChange() {
-    setChecked(!checked);
+  function updatePlayer(index: number) {
+    dispatch(updateFavoritePlayerIndex(index));
   }
 
   return (
@@ -52,11 +49,19 @@ const Favorite = () => {
           <TableBody>
             {
               data.map((row, index) => (
-                <ClickableDataTableRow onClick={() => setChecked(!checked)}>
-                  <Checkbox checked={checked} onChange={() => setChecked(!checked)} />
+                <ClickableDataTableRow onClick={() => {
+                  updatePlayer(index);
+                }}
+                >
+                  <Checkbox
+                    checked={isFavoritePlayer(index)}
+                    onChange={() => {
+                      updatePlayer(index);
+                    }}
+                  />
                   {
                     tableHeaderKeys.map((key) => (
-                      <DataTableText isChecked={checked}>{row[key]}</DataTableText>
+                      <DataTableText isChecked={isFavoritePlayer(index)}>{row[key]}</DataTableText>
                     ))
                   }
                 </ClickableDataTableRow>
@@ -65,7 +70,7 @@ const Favorite = () => {
           </TableBody>
         </Table>
       </OverflowWrapper>
-      <ButtonBar />
+      <ButtonBar disableContinue={!favoritePlayerIndex === undefined} />
     </FlexColumnContainer>
   );
 };

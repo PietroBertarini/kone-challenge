@@ -4,7 +4,7 @@ import {
   IBackModalProgress,
   IUpdateModalData,
   IUpdateModalError,
-  IError,
+  IError, IUpdateFavoritePlayerIndex,
 } from './Modal.types';
 
 export const nextModalProgress = () : INextModalProgress => ({
@@ -20,6 +20,12 @@ export const updateModalData = (newData: any, fileName: string) :
     IUpdateModalData => ({
   type: EModalActionTypes.UPDATE_MODAL_DATA,
   payload: { data: newData, fileName },
+});
+
+export const updateFavoritePlayerIndex = (newIndex: number) :
+    IUpdateFavoritePlayerIndex => ({
+  type: EModalActionTypes.UPDATE_FAVORITE_PLAYER_INDEX,
+  payload: { index: newIndex },
 });
 
 export const updateModalError = (newError: IError, fileName: string) :

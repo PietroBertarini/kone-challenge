@@ -34,6 +34,11 @@ export default function modalReducer(
         fileName: action.payload.fileName,
         data: undefined,
       };
+    case EModalActionTypes.UPDATE_FAVORITE_PLAYER_INDEX:
+      return {
+        ...state,
+        favoritePlayerIndex: action.payload.index,
+      };
 
     default:
       return state;
