@@ -12,7 +12,8 @@ export const FlexButtonContainer = styled.div`
   flex-direction: row;
   justify-content: flex-end;
   align-items: center;
-  padding: 32px;
+  padding-bottom: 32px;
+  padding-top: 32px;
 `;
 
 export const WhiteSpace = styled.div`
