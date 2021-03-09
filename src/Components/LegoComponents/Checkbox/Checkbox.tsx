@@ -4,7 +4,7 @@ import React, {
 import { faCheckCircle } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
-  CheckboxStyle, Border, Indicator,
+  CheckboxStyle, Border, Icon,
 } from './Checkbox.styles';
 
 interface OwnProps {
@@ -12,15 +12,13 @@ interface OwnProps {
     onChange: any,
 }
 
-const Checkbox = ({
-  checked, onChange,
-} : OwnProps) => (
+const Checkbox = ({ checked, onChange } : OwnProps) => (
   <CheckboxStyle isChecked={checked}>
     <Border onClick={() => onChange(!checked)}>
       { checked && (
-      <Indicator>
+      <Icon>
         <FontAwesomeIcon icon={faCheckCircle} />
-      </Indicator>
+      </Icon>
       )}
     </Border>
   </CheckboxStyle>

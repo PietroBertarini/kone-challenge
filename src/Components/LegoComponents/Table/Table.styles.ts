@@ -57,7 +57,6 @@ export const HeaderTableText = styled.th`
   color: ${labelGray};
   text-justify: auto;
   font: normal normal 300 11px/17px Poppins;
-  letter-spacing: 0;
   opacity: 1;
 
 `;
@@ -85,7 +84,6 @@ export const DataTableText = styled.td<DataTableTextProps>`
   /* UI Properties */
   text-align: left;
   font: normal normal medium 12px/18px Poppins;
-  letter-spacing: 0;
   color: ${fontBlack};
   background-color: ${(props) => (props.isChecked ? 'var(--isCheckedBack)' : 'var(--isNotCheckedBack)')};
   opacity: 1;

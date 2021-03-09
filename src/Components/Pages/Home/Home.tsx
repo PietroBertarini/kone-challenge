@@ -21,6 +21,7 @@ const Home = () => {
 
   const tableHeaderKeys = data ? Object.keys(data[0]) : [];
   const favoritePlayer = data && favoritePlayerIndex !== undefined ? data[favoritePlayerIndex] : [];
+
   return (
     <>
       <Navbar>

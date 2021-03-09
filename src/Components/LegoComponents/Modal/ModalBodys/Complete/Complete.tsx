@@ -7,8 +7,7 @@ import ButtonBar from '../../../ButtonBar/ButtonBar';
 import { FlexRowContainer } from '../UploadData/UploadData.styles';
 import { TextTableHeader } from '../../../Table/Table.styles';
 import {
-  CompleteFlexColumnContainer,
-  DataContainer, DataText, Label,
+  CompleteFlexColumnContainer, DataContainer, DataText, Label,
 } from './Complete.styles';
 import { getPlayersStatusCount } from './Complete.utils';
 
@@ -19,6 +18,7 @@ const Complete = () => {
   } = modalRedux;
   const favoritePlayerName = favoritePlayerIndex !== undefined ? data[favoritePlayerIndex]['Player Name'] : 'Nobody';
   const allPlayersStatusCount = getPlayersStatusCount(data);
+
   return (
     <CompleteFlexColumnContainer>
       <TextTableHeader>Summary</TextTableHeader>

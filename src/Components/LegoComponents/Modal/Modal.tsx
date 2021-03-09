@@ -6,7 +6,7 @@ import { useSelector } from 'react-redux';
 import {
   CloseButton, Container, Header, HeaderBar, Overlay,
 } from './Modal.styles';
-import StepProgress from '../StepProgress/StepProgress';
+import ProgressStepBar from '../ProgressBar/ProgressStepBar';
 import UploadData from './ModalBodys/UploadData/UploadData';
 import { EProgressStepOfModal, IModalState } from '../../../Redux/LegoComponents/Modal/Modal.types';
 import { rootState } from '../../../Redux/root-reducer';
@@ -23,6 +23,7 @@ const Modal = ({ open, onClose }: OwnProps) => {
   const portalDiv = document.getElementById('portal');
   const modalRedux : IModalState = useSelector((state : rootState) => state.modal);
   const { progressStep } = modalRedux;
+
   return (open && portalDiv) ? ReactDom.createPortal(
     <Overlay>
       <Container>
@@ -32,7 +33,7 @@ const Modal = ({ open, onClose }: OwnProps) => {
             <FontAwesomeIcon icon={faTimes} />
           </CloseButton>
         </HeaderBar>
-        <StepProgress />
+        <ProgressStepBar />
         {progressStep === EProgressStepOfModal.UPLOAD_DATA && (<UploadData />)}
         {progressStep === EProgressStepOfModal.PLAYER_STATUS && (<PlayerStatus />)}
         {progressStep === EProgressStepOfModal.FAVORITE && (<Favorite />)}

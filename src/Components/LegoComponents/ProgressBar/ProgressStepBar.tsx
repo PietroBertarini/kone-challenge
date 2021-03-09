@@ -3,10 +3,10 @@ import {
   faCheck,
   faFootballBall, faStar, faUpload,
 } from '@fortawesome/free-solid-svg-icons';
-import { FlexContainer } from './StepProgress.styles';
+import { FlexContainer } from './ProgressStepBar.styles';
 import { FirstStep, LastStep, MiddleStep } from './Steps/Steps';
 
-const StepProgress = () => (
+const ProgressStepBar = () => (
   <FlexContainer>
     <FirstStep iconImage={faUpload} text="Upload Data" stepOrder={0} />
     <MiddleStep iconImage={faFootballBall} text="Player Status" stepOrder={1} />
@@ -15,4 +15,4 @@ const StepProgress = () => (
   </FlexContainer>
 );
 
-export default StepProgress;
+export default ProgressStepBar;

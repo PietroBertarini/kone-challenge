@@ -24,6 +24,7 @@ const Favorite = () => {
   const modalRedux : IModalState = useSelector((state : rootState) => state.modal);
   const { data, favoritePlayerIndex } = modalRedux;
   const tableHeaderKeys = ['Player Name', '#', 'Pos', 'College'];
+
   function isFavoritePlayer(actualIndex: number) {
     return actualIndex === favoritePlayerIndex;
   }

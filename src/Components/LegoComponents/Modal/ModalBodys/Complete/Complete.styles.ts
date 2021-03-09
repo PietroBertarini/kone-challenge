@@ -12,11 +12,11 @@ export const DataContainer = styled.div`
 `;
 
 export const Label = styled.text`
+  /* Layout Properties */
+  padding-top: 27px;
   /* UI Properties */
   text-align: left;
-  padding-top: 27px;
   font: normal normal 300 11px/17px Poppins;
-  letter-spacing: 0;
   color: ${labelGray};
   opacity: 1;
 `;
@@ -25,7 +25,6 @@ export const DataText = styled.text`
   /* UI Properties */
   text-align: left;
   font: normal normal medium 14px/21px Poppins;
-  letter-spacing: 0;
   color: ${pureBlack};
   opacity: 1;
   

@@ -27,9 +27,9 @@ const ButtonBar = ({ disableContinue } : OwnProps) => {
   const { progressStep, error } = modalRedux;
   const haveAnyError = error !== undefined;
   const dispatch = useDispatch();
+
   return (
     <>
-      {/* <WhiteSpace /> */}
       <FlexButtonContainer>
         {progressStep > EProgressStepOfModal.UPLOAD_DATA && (
         <BackButton onClick={() => { dispatch(backModalProgress()); }}>

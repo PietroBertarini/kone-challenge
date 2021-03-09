@@ -55,7 +55,6 @@ export const MiddleStepBackground = styled.div<StepProps>`
     display: flex;
     position: relative;
     left: 14px;
-  
     border-top: 15px solid transparent;
     border-bottom: 15px solid transparent;
     border-left: 15px solid ${(props) => {
@@ -94,7 +93,6 @@ export const StyledText = styled.text<TextProps>`
   /* Layout Properties */
   margin-left: 9px;
   /* UI Properties */
-  letter-spacing: 0;
   color: ${(props) => (props.isActiveStatus ? 'var(--isActive)' : 'var(--isNotActive)')};
   text-align: left;
   font-size: 13px;
@@ -105,7 +103,6 @@ export const StyledIcon = styled.text<TextProps>`
   --isActive: ${pureWhite};
   --isNotActive: ${fontBlack};
   /* UI Properties */
-  letter-spacing: 0;
   color: ${(props) => (props.isActiveStatus ? 'var(--isActive)' : 'var(--isNotActive)')};
   text-align: left;
   font-size: 12px;

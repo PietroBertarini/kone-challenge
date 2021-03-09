@@ -3,7 +3,12 @@ import { useSelector, useDispatch } from 'react-redux';
 
 import {
   DataTableRow,
-  DataTableText, HeaderTableRow, HeaderTableText, Table, TableBody, TableHeader,
+  DataTableText,
+  HeaderTableRow,
+  HeaderTableText,
+  Table,
+  TableBody,
+  TableHeader,
   OverflowWrapper,
 } from '../../../Table/Table.styles';
 import { IModalState } from '../../../../../Redux/LegoComponents/Modal/Modal.types';
@@ -20,6 +25,7 @@ const PlayerStatus = () => {
   const { data, fileName } = modalRedux;
   const tableHeaderKeys = ['Player Name', '#', 'Pos', 'College', 'Status'];
   const playerStatus = ['Active', 'Injured', 'Practice', 'Suspended'];
+
   function updatePlayerStatus(newStatus: string, index: number) {
     const newData = data;
     newData[index].Status = newStatus;

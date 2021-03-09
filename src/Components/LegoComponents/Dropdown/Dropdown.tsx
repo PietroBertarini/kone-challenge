@@ -16,13 +16,19 @@ const Dropdown = ({
 } : OwnProps) => {
   const [open, setOpen] = useState(false);
   const ref = useRef(null);
+
+  function close(e) {
+    setOpen(e && e.target === ref.current);
+  }
+
+  /**
+     * Verify when the user click outside the box, then the dropbox will close.
+     */
   useEffect(() => {
     document.addEventListener('click', close);
     return () => document.removeEventListener('click', close);
   }, []);
-  function close(e) {
-    setOpen(e && e.target === ref.current);
-  }
+
   return (
     <DropdownStyle>
       <Control onClick={() => setOpen((prevState) => !prevState)}>

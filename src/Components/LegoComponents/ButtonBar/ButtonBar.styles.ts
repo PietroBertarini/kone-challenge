@@ -18,11 +18,12 @@ export const FlexButtonContainer = styled.div`
 `;
 
 export const ContinueButton = styled.button`
+  /* Layout Properties */
   width: 97px;
   height: 36px;
   /* UI Properties */
   background: ${primaryBlue} 0 0 no-repeat padding-box;
-  color: ${pureWhite}; ;
+  color: ${pureWhite};
   border-radius: 8px;
   margin-left: 8px;
   :hover {
@@ -32,13 +33,14 @@ export const ContinueButton = styled.button`
   }
   :disabled {
     background: ${disableGray};
-    color: ${textDisableButton} ;
+    color: ${textDisableButton};
     opacity: 0.2;
     cursor: default;
   }
 `;
 
 export const ReUploadButton = styled(ContinueButton)`
+  /* Layout Properties */
   width: 135px;
   /* UI Properties */
   border: 1px solid ${borderGray};
@@ -51,9 +53,10 @@ export const ReUploadButton = styled(ContinueButton)`
 `;
 
 export const BackButton = styled(ReUploadButton)`
+  /* Layout Properties */
   width: 66px;
-  color:  ${fontBlack};
   /* UI Properties */
+  color:  ${fontBlack};
   opacity: 1;
   :hover {
     background-color:  ${errorRed};

@@ -18,7 +18,6 @@ export const Logo = styled.h1`
   /* UI Properties */
   color: ${fontBlack};
   font: normal normal medium 30px/46px Poppins;
-  letter-spacing: 0;
   opacity: 1;
 `;
 export const ImportButton = styled.button`

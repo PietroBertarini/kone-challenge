@@ -40,8 +40,6 @@ export const Header = styled.h2`
   /* Layout Properties */
   margin: 16px 0 16px 32px;
   text-align: left;
-  letter-spacing: 0;
-
   color: ${fontBlack};
   font: normal normal medium 22px/33px Poppins;
   opacity: 1;
