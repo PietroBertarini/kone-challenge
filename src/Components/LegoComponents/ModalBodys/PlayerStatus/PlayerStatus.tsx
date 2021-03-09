@@ -1,36 +1,33 @@
-import React, { useState } from 'react';
-import { useSelector } from 'react-redux';
+import React from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 
 import {
   DataTableRow,
-  DataTableText,
-  FlexColumnContainer, HeaderTableRow, HeaderTableText, Table, TableBody, TableHeader,
-  Test, BodyHeaderPlayer,
+  DataTableText, HeaderTableRow, HeaderTableText, Table, TableBody, TableHeader,
+  OverflowWrapper, BodyHeaderPlayer, FlexColumnContainer,
 } from './PlayerStatus.styles';
 import { IModalState } from '../../../../Redux/LegoComponents/Modal/Modal.types';
 import { rootState } from '../../../../Redux/root-reducer';
 import ButtonBar from '../../ButtonBar/ButtonBar';
 import Dropdown from '../../Dropdown/Dropdown';
-
-const buttonRef : any = React.createRef();
-
-export function handleOpenDialog(e: any) {
-  // Note that the ref is set async, so it might be null at some point
-  if (buttonRef.current) {
-    buttonRef.current.open(e);
-  }
-};
+import { updateModalData } from '../../../../Redux/LegoComponents/Modal/Modal.actions';
 
 const PlayerStatus = () => {
+  const dispatch = useDispatch();
   const modalRedux : IModalState = useSelector((state : rootState) => state.modal);
-  const { data } = modalRedux;
+  const { data, fileName } = modalRedux;
   const tableHeaderKeys = ['Player Name', '#', 'Pos', 'College', 'Status'];
   const playerStatus = ['Active', 'Injured', 'Practice', 'Suspended'];
+  function updatePlayerStatus(newStatus: string, index: number) {
+    const newData = data;
+    newData[index].Status = newStatus;
+    if (fileName) dispatch(updateModalData(newData, fileName));
+  }
 
   return (
     <FlexColumnContainer>
       <BodyHeaderPlayer>Player Status</BodyHeaderPlayer>
-      <Test>
+      <OverflowWrapper>
         <Table>
           <TableHeader>
             <HeaderTableRow>
@@ -43,7 +40,7 @@ const PlayerStatus = () => {
           </TableHeader>
           <TableBody>
             {
-              data.map((row) => (
+              data.map((row, index) => (
                 <DataTableRow>
                   {
                     tableHeaderKeys.map((key) => {
@@ -52,7 +49,7 @@ const PlayerStatus = () => {
                           <Dropdown
                             itensArray={playerStatus}
                             prompt={row[key]}
-                            onChange={() => console.log('Atualizar status player')}
+                            onChange={(val) => updatePlayerStatus(val, index)}
                             value={row[key]}
                           />
                         );
@@ -67,7 +64,7 @@ const PlayerStatus = () => {
             }
           </TableBody>
         </Table>
-      </Test>
+      </OverflowWrapper>
       <ButtonBar />
     </FlexColumnContainer>
   );

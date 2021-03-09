@@ -1,14 +1,10 @@
 import React from 'react';
-import { useSelector, useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { CSVReader } from 'react-papaparse';
 import {
-  BackButton,
-  ContinueButton,
-  FlexButtonContainer,
-  ReUploadButton,
-  WhiteSpace,
+  BackButton, ContinueButton, FlexButtonContainer, ReUploadButton, WhiteSpace,
 } from './ButtonBar.styles';
-import { IModalState } from '../../../Redux/LegoComponents/Modal/Modal.types';
+import { EProgressStepOfModal, IModalState } from '../../../Redux/LegoComponents/Modal/Modal.types';
 import { rootState } from '../../../Redux/root-reducer';
 import { handleOnError, handleOnFileLoad } from '../ModalBodys/UploadData/UploadData.utils';
 import { backModalProgress, nextModalProgress } from '../../../Redux/LegoComponents/Modal/Modal.actions';
@@ -35,7 +31,7 @@ const ButtonBar = ({ disableContinue } : OwnProps) => {
     <>
       <WhiteSpace />
       <FlexButtonContainer>
-        {progressStep > 1 && (
+        {progressStep > EProgressStepOfModal.UPLOAD_DATA && (
         <BackButton onClick={() => { dispatch(backModalProgress()); }}>
           Back
         </BackButton>

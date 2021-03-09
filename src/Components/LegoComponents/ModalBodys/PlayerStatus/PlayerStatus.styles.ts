@@ -4,7 +4,7 @@ import {
 } from '../../../../global.styles';
 import { BodyHeader } from '../UploadData/UploadData.styles';
 
-export const Test = styled.div`
+export const OverflowWrapper = styled.div`
   /* Layout Properties */
   width: 100%;
   height: 4000px;
@@ -13,19 +13,6 @@ export const Test = styled.div`
   align-content: start;
   overflow-y: auto;
 `;
-
-export const TableHeader = styled.thead`
-  position: sticky;
-  top: 0;
-z-index: 10;
-  background-color: ${pureWhite};
-  
-`;
-
-export const TableBody = styled.tbody`
-
-`;
-
 export const FlexColumnContainer = styled.div`
   /* Layout Properties */
   width: 100%;
@@ -37,6 +24,18 @@ export const FlexColumnContainer = styled.div`
   overflow:auto;
   justify-content: start;
   align-items: start;
+
+`;
+
+export const TableHeader = styled.thead`
+  position: sticky;
+  top: 0;
+z-index: 10;
+  background-color: ${pureWhite};
+  
+`;
+
+export const TableBody = styled.tbody`
 
 `;
 
