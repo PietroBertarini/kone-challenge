@@ -11,9 +11,9 @@ interface OwnProps {
     itensArray: any, prompt: string, onChange: any, value?: any
 }
 
-function Dropdown({
+const Dropdown = ({
   itensArray, prompt, onChange, value,
-} : OwnProps) {
+} : OwnProps) => {
   const [open, setOpen] = useState(false);
   const ref = useRef(null);
   useEffect(() => {
@@ -45,6 +45,6 @@ function Dropdown({
       </Itens>
     </DropdownStyle>
   );
-}
+};
 
 export default Dropdown;

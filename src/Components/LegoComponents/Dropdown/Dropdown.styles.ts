@@ -72,7 +72,6 @@ interface ItensProps {
 }
 export const Itens = styled.div<ItensProps>`
   width: 150px;
-  
   display: ${(props) => (props.isOpen ? 'block' : 'none')};
   background-color: ${pureWhite};
   border-radius: 0 0 8px 8px;
