@@ -4,9 +4,10 @@ import { useSelector } from 'react-redux';
 import { IModalState } from '../../../../../Redux/LegoComponents/Modal/Modal.types';
 import { rootState } from '../../../../../Redux/root-reducer';
 import ButtonBar from '../../../ButtonBar/ButtonBar';
-import { FlexColumnContainer, FlexRowContainer } from '../UploadData/UploadData.styles';
+import { FlexRowContainer } from '../UploadData/UploadData.styles';
 import { BodyHeaderPlayer } from '../PlayerStatus/PlayerStatus.styles';
 import {
+  CompleteFlexColumnContainer,
   DataContainer, DataText, Label,
 } from './Complete.styles';
 import { getPlayersStatusCount } from './Complete.utils';
@@ -16,10 +17,10 @@ const Complete = () => {
   const {
     data, fileName, favoritePlayerIndex, teamName,
   } = modalRedux;
-  const favoritePlayerName = favoritePlayerIndex ? data[favoritePlayerIndex]['Player Name'] : 'Nobody';
+  const favoritePlayerName = favoritePlayerIndex !== undefined ? data[favoritePlayerIndex]['Player Name'] : 'Nobody';
   const allPlayersStatusCount = getPlayersStatusCount(data);
   return (
-    <FlexColumnContainer>
+    <CompleteFlexColumnContainer>
       <BodyHeaderPlayer>Summary</BodyHeaderPlayer>
       <FlexRowContainer>
         <DataInformation
@@ -54,7 +55,7 @@ const Complete = () => {
         />
       </FlexRowContainer>
       <ButtonBar />
-    </FlexColumnContainer>
+    </CompleteFlexColumnContainer>
   );
 };
 

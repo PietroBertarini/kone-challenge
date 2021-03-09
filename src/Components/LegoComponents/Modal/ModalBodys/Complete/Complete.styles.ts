@@ -30,3 +30,14 @@ export const DataText = styled.text`
   opacity: 1;
   
 `;
+export const CompleteFlexColumnContainer = styled.div`
+  /* Layout Properties */
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding-left: 32px;
+  padding-right: 48px;
+  justify-content: start;
+  align-items: start;
+`;
