@@ -8,6 +8,9 @@ export const Navbar = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
+  padding-bottom: 20px;
+  padding-left: 32px;
+  padding-right: 44px;
 `;
 export const Logo = styled.h1`
   /* Layout Properties */

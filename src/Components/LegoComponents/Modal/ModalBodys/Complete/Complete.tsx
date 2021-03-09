@@ -39,19 +39,19 @@ const Complete = () => {
       <FlexRowContainer>
         <DataInformation
           label="Active"
-          data={allPlayersStatusCount.Active ? allPlayersStatusCount.Active : 0}
+          data={allPlayersStatusCount.active ? allPlayersStatusCount.active : 0}
         />
         <DataInformation
           label="Injured"
-          data={allPlayersStatusCount.Injuried ? allPlayersStatusCount.Injuried : 0}
+          data={allPlayersStatusCount.injuried ? allPlayersStatusCount.injuried : 0}
         />
         <DataInformation
           label="Practice Squad"
-          data={allPlayersStatusCount.Practice ? allPlayersStatusCount.Practice : 0}
+          data={allPlayersStatusCount.practice ? allPlayersStatusCount.practice : 0}
         />
         <DataInformation
           label="Suspended"
-          data={allPlayersStatusCount.Suspended ? allPlayersStatusCount.Suspended : 0}
+          data={allPlayersStatusCount.suspended ? allPlayersStatusCount.suspended : 0}
         />
       </FlexRowContainer>
       <ButtonBar />

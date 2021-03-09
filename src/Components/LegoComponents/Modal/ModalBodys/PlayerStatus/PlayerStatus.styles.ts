@@ -13,11 +13,16 @@ export const OverflowWrapper = styled.div`
   align-content: start;
   overflow-y: auto;
 `;
-
+export const OverflowWrapperZero = styled(OverflowWrapper)`
+  /* Layout Properties */
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
+`;
 export const TableHeader = styled.thead`
   position: sticky;
   top: 0;
-z-index: 10;
+  z-index: 10;
   background-color: ${pureWhite};
   
 `;
@@ -37,7 +42,7 @@ export const Table = styled.table`
 export const HeaderTableRow = styled.tr`
     background-color: ${pureWhite};
     height: 36px;
-  z-index: 10;
+    z-index: 10;
 `;
 
 export const BodyHeaderPlayer = styled(BodyHeader)`
@@ -68,7 +73,8 @@ export const ClickableDataTableRow = styled.tr`
   cursor: pointer;
 `;
 interface DataTableTextProps {
-  isChecked?: boolean;
+  isChecked?: boolean,
+  isFavoritePlayer?: boolean,
 }
 export const DataTableText = styled.td<DataTableTextProps>`
   --isCheckedBorder: ${favoriteYellow};
@@ -82,19 +88,23 @@ export const DataTableText = styled.td<DataTableTextProps>`
   color: ${fontBlack};
   background-color: ${(props) => (props.isChecked ? 'var(--isCheckedBack)' : 'var(--isNotCheckedBack)')};
   opacity: 1;
-  border-top: 1px solid ${(props) => (props.isChecked ? 'var(--isCheckedBorder)' : 'var(--isNotCheckedBorder)')};
-  border-bottom: 1px solid ${(props) => (props.isChecked ? 'var(--isCheckedBorder)' : 'var(--isNotCheckedBorder)')};
+  border-top: 1px solid ${(props) => (props.isChecked || props.isFavoritePlayer
+    ? 'var(--isCheckedBorder)' : 'var(--isNotCheckedBorder)')};
+  border-bottom: 1px solid ${(props) => (props.isChecked || props.isFavoritePlayer
+    ? 'var(--isCheckedBorder)' : 'var(--isNotCheckedBorder)')};
   padding-left: 16px;
 
   &:first-child {
     border-top-left-radius: 8px;
     border-bottom-left-radius: 8px;
-    border-left: 1px solid ${(props) => (props.isChecked ? 'var(--isCheckedBorder)' : 'var(--isNotCheckedBorder)')};
+    border-left: 1px solid ${(props) => (props.isChecked || props.isFavoritePlayer
+    ? 'var(--isCheckedBorder)' : 'var(--isNotCheckedBorder)')};
   }
 
   &:last-child {
     border-bottom-right-radius: 8px;
     border-top-right-radius: 8px;
-    border-right: 1px solid ${(props) => (props.isChecked ? 'var(--isCheckedBorder)' : 'var(--isNotCheckedBorder)')};
+    border-right: 1px solid ${(props) => (props.isChecked || props.isFavoritePlayer
+    ? 'var(--isCheckedBorder)' : 'var(--isNotCheckedBorder)')};
   }
 `;

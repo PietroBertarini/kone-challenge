@@ -1,12 +1,12 @@
 export function getPlayersStatusCount(data) {
   const statusData = data.map((item) => item.Status);
-  const allPlayersStatus = statusData.reduce((statusCount, currentStatus) => {
-    if (typeof statusCount[currentStatus] !== 'undefined') {
-      statusCount[currentStatus] += 1;
+  return statusData.reduce((statusCount, currentStatus) => {
+    const currentStatusLowerCase = currentStatus.toLowerCase();
+    if (typeof statusCount[currentStatusLowerCase] !== 'undefined') {
+      statusCount[currentStatusLowerCase] += 1;
       return statusCount;
     }
-    statusCount[currentStatus] = 1;
+    statusCount[currentStatusLowerCase] = 1;
     return statusCount;
   }, {});
-  return allPlayersStatus;
 }
