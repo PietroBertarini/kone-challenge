@@ -52,6 +52,7 @@ The files to use and design references of the expected results can be found in t
 
 ---
 
+
 ## Layout
 
 The application layout is available:
@@ -110,7 +111,7 @@ The following tools were used in the construction of the project:
 
 
 
--   Prototype:  **[Adobe XD](https://www.adobe.com/products/xd.html)**  →  **[Protótipo (My Team)](https://xd.adobe.com/view/66c0b6fc-e7fd-4edd-b7ae-072f5c9402a6-3393/)**
+-   Prototype:  **[Adobe XD](https://www.adobe.com/products/xd.html)**  →  **[Prototype (My Team)](https://xd.adobe.com/view/66c0b6fc-e7fd-4edd-b7ae-072f5c9402a6-3393/)**
 -   Editor:  **[Web Storm](https://www.jetbrains.com/pt-br/webstorm/)**
 -   Icons:  **[Font Awesome](https://fontawesome.com/)**
 -   Fonts:  **[Poppins](https://fonts.google.com/specimen/Poppins)**
