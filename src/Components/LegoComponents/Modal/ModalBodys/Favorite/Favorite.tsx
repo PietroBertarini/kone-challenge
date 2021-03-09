@@ -10,14 +10,14 @@ import Checkbox from '../../../Checkbox/Checkbox';
 import {
   OverflowWrapper,
   Table,
-  BodyHeaderPlayer,
+  TextTableHeader,
   HeaderTableRow,
   TableHeader,
   HeaderTableText,
   TableBody,
   DataTableText,
   ClickableDataTableRow,
-} from '../PlayerStatus/PlayerStatus.styles';
+} from '../../../Table/Table.styles';
 
 const Favorite = () => {
   const dispatch = useDispatch();
@@ -33,7 +33,7 @@ const Favorite = () => {
 
   return (
     <FlexColumnContainer>
-      <BodyHeaderPlayer>Player Status</BodyHeaderPlayer>
+      <TextTableHeader>Player Status</TextTableHeader>
       <OverflowWrapper>
         <Table>
           <TableHeader>

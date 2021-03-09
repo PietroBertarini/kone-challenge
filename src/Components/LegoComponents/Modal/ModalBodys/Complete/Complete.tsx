@@ -5,7 +5,7 @@ import { IModalState } from '../../../../../Redux/LegoComponents/Modal/Modal.typ
 import { rootState } from '../../../../../Redux/root-reducer';
 import ButtonBar from '../../../ButtonBar/ButtonBar';
 import { FlexRowContainer } from '../UploadData/UploadData.styles';
-import { BodyHeaderPlayer } from '../PlayerStatus/PlayerStatus.styles';
+import { TextTableHeader } from '../../../Table/Table.styles';
 import {
   CompleteFlexColumnContainer,
   DataContainer, DataText, Label,
@@ -21,7 +21,7 @@ const Complete = () => {
   const allPlayersStatusCount = getPlayersStatusCount(data);
   return (
     <CompleteFlexColumnContainer>
-      <BodyHeaderPlayer>Summary</BodyHeaderPlayer>
+      <TextTableHeader>Summary</TextTableHeader>
       <FlexRowContainer>
         <DataInformation
           label="Data"

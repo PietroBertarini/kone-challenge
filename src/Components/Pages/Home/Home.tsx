@@ -9,7 +9,7 @@ import { FlexColumnContainer } from '../../LegoComponents/Modal/ModalBodys/Uploa
 import {
   DataTableRow, DataTableText, HeaderTableRow, HeaderTableText,
   OverflowWrapper, Table, TableBody, TableHeader,
-} from '../../LegoComponents/Modal/ModalBodys/PlayerStatus/PlayerStatus.styles';
+} from '../../LegoComponents/Table/Table.styles';
 
 const Home = () => {
   const dispatch = useDispatch();
