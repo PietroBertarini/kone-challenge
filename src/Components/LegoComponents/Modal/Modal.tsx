@@ -7,12 +7,12 @@ import {
   CloseButton, Container, Header, HeaderBar, Overlay,
 } from './Modal.styles';
 import StepProgress from '../StepProgress/StepProgress';
-import UploadData from '../ModalBodys/UploadData/UploadData';
+import UploadData from './ModalBodys/UploadData/UploadData';
 import { EProgressStepOfModal, IModalState } from '../../../Redux/LegoComponents/Modal/Modal.types';
 import { rootState } from '../../../Redux/root-reducer';
-import PlayerStatus from '../ModalBodys/PlayerStatus/PlayerStatus';
-import Favorite from '../ModalBodys/Favorite/Favorite';
-import Complete from '../ModalBodys/Complete/Complete';
+import PlayerStatus from './ModalBodys/PlayerStatus/PlayerStatus';
+import Favorite from './ModalBodys/Favorite/Favorite';
+import Complete from './ModalBodys/Complete/Complete';
 
 interface OwnProps {
     open: boolean,

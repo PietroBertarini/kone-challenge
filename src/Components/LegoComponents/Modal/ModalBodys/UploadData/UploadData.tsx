@@ -17,11 +17,11 @@ import {
   TextRectangle,
   TextStyle,
 } from './UploadData.styles';
-import { IError, IModalState } from '../../../../Redux/LegoComponents/Modal/Modal.types';
-import { rootState } from '../../../../Redux/root-reducer';
+import { IError, IModalState } from '../../../../../Redux/LegoComponents/Modal/Modal.types';
+import { rootState } from '../../../../../Redux/root-reducer';
 import { handleOnError, handleOnFileLoad } from './UploadData.utils';
-import ButtonBar from '../../ButtonBar/ButtonBar';
-import { updateTeamName } from '../../../../Redux/LegoComponents/Modal/Modal.actions';
+import ButtonBar from '../../../ButtonBar/ButtonBar';
+import { updateTeamName } from '../../../../../Redux/LegoComponents/Modal/Modal.actions';
 
 const buttonRef : any = React.createRef();
 

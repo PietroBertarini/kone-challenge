@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import {
   borderGray, favoriteYellow, fontBlack, labelGray, lightGray, pureWhite,
-} from '../../../../global.styles';
+} from '../../../../../global.styles';
 import { BodyHeader } from '../UploadData/UploadData.styles';
 
 export const OverflowWrapper = styled.div`

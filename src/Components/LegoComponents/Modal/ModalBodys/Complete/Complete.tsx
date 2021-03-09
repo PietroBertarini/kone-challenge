@@ -1,9 +1,9 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 
-import { IModalState } from '../../../../Redux/LegoComponents/Modal/Modal.types';
-import { rootState } from '../../../../Redux/root-reducer';
-import ButtonBar from '../../ButtonBar/ButtonBar';
+import { IModalState } from '../../../../../Redux/LegoComponents/Modal/Modal.types';
+import { rootState } from '../../../../../Redux/root-reducer';
+import ButtonBar from '../../../ButtonBar/ButtonBar';
 import { FlexColumnContainer, FlexRowContainer } from '../UploadData/UploadData.styles';
 import { BodyHeaderPlayer } from '../PlayerStatus/PlayerStatus.styles';
 import {

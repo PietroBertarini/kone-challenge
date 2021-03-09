@@ -6,7 +6,7 @@ import {
 } from './ButtonBar.styles';
 import { EProgressStepOfModal, IModalState } from '../../../Redux/LegoComponents/Modal/Modal.types';
 import { rootState } from '../../../Redux/root-reducer';
-import { handleOnError, handleOnFileLoad } from '../ModalBodys/UploadData/UploadData.utils';
+import { handleOnError, handleOnFileLoad } from '../Modal/ModalBodys/UploadData/UploadData.utils';
 import { backModalProgress, nextModalProgress } from '../../../Redux/LegoComponents/Modal/Modal.actions';
 
 const buttonRef : any = React.createRef();

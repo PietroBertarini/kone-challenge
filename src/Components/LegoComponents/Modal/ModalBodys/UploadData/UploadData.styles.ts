@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import {
   activeBlue, borderGray, errorRed, primaryBlue, pureBlack, pureWhite,
-} from '../../../../global.styles';
+} from '../../../../../global.styles';
 
 export const FlexColumnContainer = styled.div`
   /* Layout Properties */

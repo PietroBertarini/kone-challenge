@@ -1,6 +1,6 @@
-import { EModalError, IError } from '../../../../Redux/LegoComponents/Modal/Modal.types';
-import { store } from '../../../../Redux/store';
-import { updateModalData, updateModalError } from '../../../../Redux/LegoComponents/Modal/Modal.actions';
+import { EModalError, IError } from '../../../../../Redux/LegoComponents/Modal/Modal.types';
+import { store } from '../../../../../Redux/store';
+import { updateModalData, updateModalError } from '../../../../../Redux/LegoComponents/Modal/Modal.actions';
 
 export function checkCsvErrors(data: any) : IError | undefined {
   if (data.errors) {

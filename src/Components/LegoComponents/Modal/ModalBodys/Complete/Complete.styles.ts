@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { labelGray, pureBlack } from '../../../../global.styles';
+import { labelGray, pureBlack } from '../../../../../global.styles';
 
 export const DataContainer = styled.div`
   /* Layout Properties */
